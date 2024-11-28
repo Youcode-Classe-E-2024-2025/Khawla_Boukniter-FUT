@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players Page</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:300,400,700"/>
+</head>
+<body class="bg-zinc-800 text-white">
+    <header class="bg-black">
+        <nav class="flex p-5">
+            <span>logo</span>
+            <ul class="list-none flex mx-auto gap-20">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="player.html">Players</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="cards flex gap-3 relative z-[1]">
+        <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly">
+            <div class="bench-con flex flex-wrap gap-3">
+                <div class="slot relative text-center h-72 w-44">
+                    <button class="cardbutton button-reset" aria-label="Card Button">
+                        <img class="placeholder-img placeholder-enable-hover-shadow top-2" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                        <div class="add-icon absolute left-1/2 top-[50%] flex justify-center items-center" style="translate: -50% -50%">
+                            <span class="display-contents">
+                                <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                    <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                </svg>
+                            </span>
+                            <div class="absolute text-3xl">+</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>   
+    </div>
+    <div class="player-form hidden items-center bg-[#1E1E1E] rounded-lg p-10 z-[2] fixed top-36 left-[25%] w-[45%] flex justify-around">
+        <form action="">
+            <h3 class="justify-self-center my-4">Add player</h3>
+            <div class="flex flex-col gap-3">
+                <div class="flex items-center gap-20">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player name">
+                </div>
+                <div class="flex items-center gap-20">
+                    <label for="image">Image</label>
+                    <input type="url" id="image" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player image url">
+                </div>
+                <div class="flex items-center gap-[4.1rem]">
+                    <label for="position">Position</label>
+                    <input type="text" id="position" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player position">
+                </div>
+                <div class="flex items-center gap-12">
+                    <label for="position">Nationality</label>
+                    <input type="url" id="nationality" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player nationality">
+                </div>
+                <div class="flex items-center gap-[4.4rem]">
+                    <label for="club">League</label>
+                    <div class="flex flex-col gap-2">
+                        <input type="text" id="club" class="input bg-[#404040] px-4 py-2 rounded w-[85%]" placeholder="Player league">
+                        <input type="url" id="league" class="input bg-[#404040] px-4 py-2 rounded w-[85%]" placeholder="League icon url">
+                    </div>
+                </div>
+                <div class="flex items-center gap-[4.4rem]">
+                </div>
+                <div class="flex items-center gap-[4.7rem]">
+                    <label for="rating">Rating</label>
+                    <input type="number" id="rating" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player rating">
+                </div>
+                <div class="flex items-center gap-[5.4rem]">
+                    <label for="pace">Pace</label>
+                    <input type="number" id="pace" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player pace">
+                </div>
+                <div class="flex items-center gap-[3.8rem]">
+                    <label for="shooting">shooting</label>
+                    <input type="number" id="shooting" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player shooting">
+                </div>
+                <div class="flex items-center gap-[4.1rem]">
+                    <label for="passing">Passing</label>
+                    <input type="number" id="passing" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player pasa">
+                </div>
+                <div class="flex items-center gap-[3.6rem]">
+                    <label for="dribbling">Dribbling</label>
+                    <input type="number" id="dribbling" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player dribbling">
+                </div>
+                <div class="flex items-center gap-12">
+                    <label for="defending">Defending</label>
+                    <input type="number" id="defending" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player defending">
+                </div>
+                <div class="flex items-center gap-[3.8rem]">
+                    <label for="physical">Physical</label>
+                    <input type="number" id="physical" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player physical">
+                </div>
+            </div>
+        </form>
+        <div class="flex flex-col items-center mr-12 gap-16">
+            <div class="fut-player-card form-card" style="height: 18rem; width: 11rem;">
+                <div class="player-card-top">
+                    <div class="player-master-info">
+                        <div class="player-rating" style="height: 15px;">
+                            <span>80</span>
+                        </div>
+                        <div class="player-position" style="height: 15px;">
+                            <span style="font-size: smaller;">pos</span>
+                        </div>
+                        <div class="player-nation">
+                            <img src="https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg" alt="Argentina" draggable="false">
+                        </div>
+                        <div class="player-club">
+                            <img src="https://selimdoyranli.com/cdn/fut-player-card/img/barcelona.svg" alt="Barcelona" draggable="false">
+                        </div>
+                    </div>
+                    <div class="player-picture" style="height: fit-content;">
+                        <img src="https://selimdoyranli.com/cdn/fut-player-card/img/messi.png" alt="Messi" draggable="false">
+                    </div>
+                </div>
+                <div class="player-card-bottom">
+                    <div class="player-info">
+                        <div class="player-name">
+                            <span>name</span>
+                        </div>
+                        <div class="player-features">
+                            <div class="player-features-col">
+                                <span>
+                                    <div class="player-feature-value">pace</div>
+                                    <div class="player-feature-title">PAC</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">sho</div>
+                                    <div class="player-feature-title">SHO</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">pas</div>
+                                    <div class="player-feature-title">PAS</div>
+                                </span>
+                            </div>
+                            <div class="player-features-col">
+                                <span>
+                                    <div class="player-feature-value">dri</div>
+                                    <div class="player-feature-title">DRI</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">def</div>
+                                    <div class="player-feature-title">DEF</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">phy</div>
+                                    <div class="player-feature-title">PHY</div>
+                                </span>
+                            </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn bg-[#55CCA2] text-black px-4 py-2 rounded my-4 w-fit">Add player</button>
+        </div>
+    </div>
+    <script src="data.js" type="module"></script>
+    <script type="module" src="player.js"></script>
+</body>
+</html>
