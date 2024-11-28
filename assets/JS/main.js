@@ -99,7 +99,23 @@ const formationBtn = document.querySelector('.formation-btn');
 const formationOptions = document.querySelector('.formation-options');
 const options = document.querySelectorAll('.option');
 
+formationBtn.addEventListener('click', () => {
+    formationOptions.style.display = formationOptions.style.display === "grid" ? "none" : "grid";
+});
 
+options.forEach(option => {
+    option.addEventListener('click', () => {
+        options.forEach(opt => opt.classList.remove('selected'));
+        option.classList.add('selected');
+        formationBtn.textContent = option.textContent;
+        formationOptions.style.display = "none";
+        updateFormation(option.textContent);
+    });
+});
+
+window.onload = () => {
+    updateFormation("3-5-2");
+};
 
 
 formationBtn.addEventListener('click', () => {
