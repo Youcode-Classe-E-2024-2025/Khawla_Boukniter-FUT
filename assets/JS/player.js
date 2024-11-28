@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector('.add-icon').addEventListener('click', () => {
         document.querySelector('.player-form').classList.toggle('hidden');
         document.querySelector('.cards').classList.add('blur');
+        eventListeners();
     });
 
     document.querySelector(".btn").addEventListener('click', () => {
@@ -91,63 +92,65 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.player-form').classList.add('hidden');
     });
 
-    const name = document.querySelector('#name');
-    const rating = document.querySelector('#rating');
-    const nationality = document.querySelector('#nationality');
-    const position = document.querySelector('#position');
-    // const club = document.querySelector('#club');
-    const pace = document.querySelector('#pace');
-    const shooting = document.querySelector('#shooting');
-    const passing = document.querySelector('#passing');
-    const dribbling = document.querySelector('#dribbling');
-    const defending = document.querySelector('#defending');
-    const physical = document.querySelector('#physical');
-    const photo = document.querySelector('#image');
+    function eventListeners() {
+        const name = document.querySelector('#name');
+        const rating = document.querySelector('#rating');
+        const nationality = document.querySelector('#nationality');
+        const position = document.querySelector('#position');
+        // const club = document.querySelector('#club');
+        const pace = document.querySelector('#pace');
+        const shooting = document.querySelector('#shooting');
+        const passing = document.querySelector('#passing');
+        const dribbling = document.querySelector('#dribbling');
+        const defending = document.querySelector('#defending');
+        const physical = document.querySelector('#physical');
+        const photo = document.querySelector('#image');
 
-    name.addEventListener('input', () => {
-        console.log( document.querySelector('#name').value);
-        
-        document.querySelector('.player-form .player-name span').textContent = name.value;
-    });
+        name.addEventListener('input', () => {
+            console.log( document.querySelector('#name').value);
+            
+            document.querySelector('.player-form .player-name span').textContent = name.value;
+        });
 
-    photo.addEventListener('input', () => {
-        document.querySelector('.player-form .player-picture img').src = photo.value;
-    });
+        photo.addEventListener('input', () => {
+            document.querySelector('.player-form .player-picture img').src = photo.value;
+        });
 
-    rating.addEventListener('input', () => {
-        document.querySelector('.player-form .player-rating span').textContent = rating.value;
-    });
+        rating.addEventListener('input', () => {
+            document.querySelector('.player-form .player-rating span').textContent = rating.value;
+        });
 
-    position.addEventListener('input', () => {
-        document.querySelector('.player-form .player-position span').textContent = position.value;
-    });
+        position.addEventListener('input', () => {
+            document.querySelector('.player-form .player-position span').textContent = position.value;
+        });
 
-    pace.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value').textContent = pace.value;
-    });
+        pace.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value').textContent = pace.value;
+        });
 
-    shooting.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(2) .player-feature-value').textContent = shooting.value;
-    });
+        shooting.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(2) .player-feature-value').textContent = shooting.value;
+        });
 
-    passing.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(3) .player-feature-value').textContent = passing.value;
-    });
+        passing.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(3) .player-feature-value').textContent = passing.value;
+        });
 
-    dribbling.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(4) .player-feature-value').textContent = dribbling.value;
-    });
+        dribbling.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(4) .player-feature-value').textContent = dribbling.value;
+        });
 
-    defending.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(5) .player-feature-value').textContent = defending.value;
-    });
+        defending.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(5) .player-feature-value').textContent = defending.value;
+        });
 
-    physical.addEventListener('input', () => {
-        document.querySelector('.player-form .player-features-col span:nth-child(6) .player-feature-value').textContent = physical.value;
-    });
+        physical.addEventListener('input', () => {
+            document.querySelector('.player-form .player-features-col span:nth-child(6) .player-feature-value').textContent = physical.value;
+        });
 
-    nationality.addEventListener('input', () => {
-        document.querySelector('.player-form .player-nation img').src ;
-    });
+        nationality.addEventListener('input', () => {
+            document.querySelector('.player-form .player-nation img').src ;
+        });
+    }
 
 });
