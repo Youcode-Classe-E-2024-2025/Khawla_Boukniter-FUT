@@ -80,4 +80,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     }
+
+    document.querySelector('.add-icon').addEventListener('click', () => {
+        document.querySelector('.player-form').classList.toggle('hidden');
+        document.querySelector('.cards').classList.add('blur');
+    });
 });
