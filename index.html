@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Team</title>
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed:300,400,700"/>
+</head>
+<body class="bg-zinc-800 text-white text-2xl">
+    <header class="bg-black">
+        <nav class="flex p-5">
+            <span>logo</span>
+            <ul class="list-none flex mx-auto gap-20">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="player.html">Players</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="p-24">
+        <div class="flex justify-around">
+                <div class="terrain h-[560px] w-[689px]" style="background-image: url('assets/terrain.svg'); background-size: cover;">
+                    <div class="flex h-16 mb-12"></div>
+                    <div class="flex flex-col gap-16">
+                        <div class="att h-32 flex justify-around">
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mid h-32 flex justify-around">
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow top-2" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow top-2" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="def h-32 flex justify-around">
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="goal h-32 justify-items-center">
+                            <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
+                                <div class="bench-con flex flex-wrap gap-3">
+                                    <div class="slot relative text-center h-72 w-36">
+                                        <button class="cardbutton button-reset" aria-label="Card Button">
+                                            <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                            <div class="add-icon absolute left-1/2 top-[40%] flex justify-center items-center" style="translate: -50% -50%">
+                                                <span class="display-contents">
+                                                    <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                                        <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                                    </svg>
+                                                </span>
+                                                <div class="absolute text-3xl">+</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <div class="formation bg-[#1E1E1E] rounded-lg p-6 flex flex-col gap-3 w-[28rem] h-fit">
+                    <h3>Formation</h3>
+                    <div class="flex flex-col">
+                        <button class="formation-btn flex items-center justify-between px-3 flex-1 min-h-9 border border-solid border-[#696969] rounded">
+                            <span id="option">3-5-2</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                        <div class="formation-options hidden grid grid-cols-[1fr_1fr] gap-2 py-3">
+                            <button class="option bg-[#404040] px-4 py-2 rounded selected">3-5-2</button>
+                            <button class="option bg-[#404040] px-4 py-2 rounded">3-4-3</button>
+                            <button class="option bg-[#404040] px-4 py-2 rounded">4-2-4</button>
+                            <button class="option bg-[#404040] px-4 py-2 rounded">5-2-3</button>
+                            <button class="option bg-[#404040] px-4 py-2 rounded">5-3-2</button>
+                            <button class="option bg-[#404040] px-4 py-2 rounded">5-4-1</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="assets/JS/script.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
