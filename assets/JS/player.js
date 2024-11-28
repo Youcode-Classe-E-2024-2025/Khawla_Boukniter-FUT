@@ -3,9 +3,11 @@ import {data} from './data.js';
 document.addEventListener("DOMContentLoaded", () => {
     window.onload = displayCard;
 
+    let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
+    localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
+
     console.log(JSON.parse(localStorage.getItem('dataPlayer')));
     
-    let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
 
     console.log(dataPlayer);
 
@@ -57,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                         <div class="player-feature-title">PAS</div>
                                     </span>
                                 </div>
-                                <div class="player-features-col">
+                                <div class="player-features-col 2">
                                     <span>
                                         <div class="player-feature-value">${player.dribbling}</div>
                                         <div class="player-feature-title">DRI</div>
@@ -107,8 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const photo = document.querySelector('#image');
 
         name.addEventListener('input', () => {
-            console.log( document.querySelector('#name').value);
-            
             document.querySelector('.player-form .player-name span').textContent = name.value;
         });
 
@@ -125,7 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         pace.addEventListener('input', () => {
-            document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value').textContent = pace.value;
+            console.log(document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value'));
+            document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value').textContent = pace.value;            
         });
 
         shooting.addEventListener('input', () => {
@@ -137,15 +138,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         dribbling.addEventListener('input', () => {
-            document.querySelector('.player-form .player-features-col span:nth-child(4) .player-feature-value').textContent = dribbling.value;
+            document.querySelector('.player-form .player-features-col .2 span:nth-child(1) .player-feature-value').textContent = dribbling.value;
         });
 
         defending.addEventListener('input', () => {
-            document.querySelector('.player-form .player-features-col span:nth-child(5) .player-feature-value').textContent = defending.value;
+            document.querySelector('.player-form .player-features-col .2 span:nth-child(2) .player-feature-value').textContent = defending.value;
         });
 
         physical.addEventListener('input', () => {
-            document.querySelector('.player-form .player-features-col span:nth-child(6) .player-feature-value').textContent = physical.value;
+            document.querySelector('.player-form .player-features-col .2 span:nth-child(3) .player-feature-value').textContent = physical.value;
         });
 
         nationality.addEventListener('input', () => {
