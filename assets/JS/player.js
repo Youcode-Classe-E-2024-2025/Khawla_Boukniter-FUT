@@ -85,4 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.player-form').classList.toggle('hidden');
         document.querySelector('.cards').classList.add('blur');
     });
+
+    document.querySelector(".btn").addEventListener('click', () => {
+        document.querySelector('.cards').classList.remove('blur');
+    });
 });
