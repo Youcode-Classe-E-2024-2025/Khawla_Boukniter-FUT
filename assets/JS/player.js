@@ -1,7 +1,7 @@
 import {data} from './data.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    window.onload = displayCard;
+    displayCard();
 
     let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
     localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
@@ -95,11 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 return card;        
     }
 
-    document.querySelector('.fut-player-card').addEventListener('click', updateForm);
+    // document.querySelector('.fut-player-card').addEventListener('click', updateForm);
 
     function updateForm(index) {
-        const btn = document.querySelector('.btn-update');
-        btn.classList.remove('hidden');
+        const updateBtn = document.querySelector('.btn-update');
+        const deleteBtn = document.querySelector('.btn-delete');
+        updateBtn.classList.remove('hidden');
+        deleteBtn.classList.remove('hidden');
         document.querySelector('.btn').classList.add('hidden');
         
         const form = document.querySelector('.player-form');
@@ -120,7 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#physical').value = player.physical;
         document.querySelector('#image').value = player.photo;
 
-        btn.onclick = () => updatePlayer(index);
+        updateBtn.onclick = () => updatePlayer(index);
+        deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            deletePlayer(index);
+        });
     }
 
     function updatePlayer(index) {
@@ -208,6 +214,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+    function deletePlayer(index) {
+        const card = document.querySelector(`.fut-player-card[data-index="${index}"]`);
+        if (card) {
+            card.classList.add('fade-out');
+            card.addEventListener('animationend', () => {
+                card.remove();
+            });
+       
+            dataPlayer.splice(index, 1);
+
+            localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
+
+            // displayCard();
+
+            updateCardsIndex();
+        }
+
+        document.querySelector('.player-form').classList.add('hidden');
+        document.querySelector('.cards').classList.remove('blur');
+        document.querySelector('.btn-delete').classList.add('hidden');
+    }
+
+    function updateCardsIndex() {
+        const cards = document.querySelectorAll('.fut-player-card');
+        cards.forEach((card, index) => {
+            card.dataset.index = index;
+            console.log(card.dataset.index);
+        });
+    }
+
     document.querySelector('.add-icon').addEventListener('click', () => {
         document.querySelector('#name').value = '';
         document.querySelector('#rating').value = '';
@@ -292,6 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
         nationality.addEventListener('input', () => {
             document.querySelector('.player-form .player-nation img').src ;
         });
+        // createCard();
     }
 
     document.querySelector('.btn').addEventListener('click', (e) => {
