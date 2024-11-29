@@ -2,3 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
+    
+@media (max-width: 1024px) {
+    .terrain {
+      background-size: contain;
+      background-repeat: round;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 8px;
+    }
+    .add-icon svg {
+      width: 20px;
+    }
+    main {
+      padding: 4rem;
+    }
+    .terrain {
+      height: 455px;
+    }
+    .changements {
+      width: 20rem;
+    }
+    .placeholder-img {
+      height: 12rem;
+    }
+    .add-icon {
+      top: 35%;
+    }
+    .player-cards {
+      margin: auto;
+    }
+    .players .slot {
+      width: auto;
+      height: 13rem;
+      top: 65%;
+    }
+    button {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 426px) {
+    html {
+      font-size: 6px;
+    }
+    .terrain {
+      height: 395px;
+    }
+    main {
+      padding: 2rem;
+    }
+  }

@@ -1,6 +1,7 @@
 import {data} from './data.js';
 
-const dataPlayer = JSON.parse(localStorage.getItem('dataPlayer'));
+    let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
+    localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
 
 window.onload = () => {
     updateFormation("3-5-2");
@@ -137,20 +138,25 @@ document.querySelectorAll('.option').forEach(option => {
 
 const addBtn = document.querySelectorAll('.player-cards');
 let selectedPlaceholder;
+let selectedPlayers = [];
 
 function playersList() {
-    
-    addBtn.forEach(btn => {
-        btn.addEventListener('click', () => {
-            console.log(btn);
+             const btn = this;
+            console.log("btn");
             selectedPlaceholder = btn;
+
+            selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
+            const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
+            console.log(playersEnTerrain);
             
-            document.querySelector('.players').classList.contains('hidden') ? document.querySelector('.players').classList.remove('hidden') : document.querySelector('.players').classList.add('hidden');
+            const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
+
+            document.querySelector('.players').classList.toggle('hidden');
             document.querySelector('.players').innerHTML = '';
             const container = document.createElement('div');
             container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
 
-            data.players.forEach(player => {
+            filteredDataPlayer.forEach(player => {
             const playerCard = document.createElement('div');
             playerCard.setAttribute('id', player.id);
             playerCard.setAttribute("onclick", `selectPlayer(${player.id})`);
@@ -177,8 +183,7 @@ function playersList() {
             container.appendChild(playerCard);
             document.querySelector('.players').appendChild(container);
             });
-        });
-    });
+    
 }
 
 addBtn.forEach(btn => {
@@ -190,7 +195,7 @@ window.selectPlayer = function selectPlayer(id) {
     
     const player = data.players.find(player => player.id == id);
     selectedPlaceholder.innerHTML = `
-        <div class="bench-con flex flex-wrap gap-3">
+        <div class="selectedPlayer bench-con flex flex-wrap gap-3" data-id="${id}">
             <div class="slot relative text-center h-72 w-36">
                 <button class="cardbutton button-reset" aria-label="Card Button">
                     <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
@@ -205,5 +210,84 @@ window.selectPlayer = function selectPlayer(id) {
             </div>
         </div>
     `;
+    document.querySelector('.players').classList.toggle('hidden');
     console.log(player);
 }
+
+let changements = [];
+function displayChangements() {
+    if (changements.length > 0) {
+        const container = document.querySelector('.changements');
+        container.innerHTML = '';
+        changements.forEach(player => {
+            const playerCard = document.createElement('div');
+            // playerCard.setAttribute('id', player.id);
+            // playerCard.setAttribute("onclick", `selectPlayer(${player.id})`);
+    
+            playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+            playerCard.innerHTML = `
+                                    <div class="bench-con flex flex-wrap gap-3">
+                                        <div class="slot relative text-center h-72 w-36">
+                                            <button class="cardbutton button-reset" aria-label="Card Button">
+                                                <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                                <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                                                    <img src="${player.photo}" alt="${player.name}">
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+            `;
+            container.appendChild(playerCard);
+        });
+    }
+}
+
+
+document.querySelector('.add-chang').addEventListener('click', () => {
+
+    
+    const container = document.createElement('div');
+    container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
+    console.log(document.querySelector('.add-chang'));
+
+        document.querySelector('.players').innerHTML = '<h3 class="text-center">Players</h3>';
+
+            document.querySelector(".players").classList.toggle('hidden');
+            selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
+            const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
+            console.log(playersEnTerrain);
+            
+            const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
+            filteredDataPlayer.forEach(player => {
+                const playerCard = document.createElement('div');
+                playerCard.setAttribute('id', player.id);
+
+                playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+                playerCard.innerHTML = `
+                                        <div class="bench-con flex flex-wrap gap-3">
+                                            <div class="slot relative text-center h-72 w-36">
+                                                <button class="cardbutton button-reset" aria-label="Card Button">
+                                                    <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                                    <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                                                        <img src="${player.photo}" alt="${player.name}">
+                                                        <div class="player-info">
+                                                            <span style="font-size: smaller">${player.name}</span>
+                                                            <p>${player.position}</p>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        </div>
+                    
+                `;
+                container.appendChild(playerCard);
+                document.querySelector('.players').appendChild(container);
+                playerCard.addEventListener('click', () => {
+                    changements.push(player);
+                    console.log(changements);
+                });
+            });
+            displayChangements();
+});
+
+

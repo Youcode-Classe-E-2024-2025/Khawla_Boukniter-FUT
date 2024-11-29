@@ -4,7 +4,7 @@ export const data = {
     "players": [
       {
         "id": 0,
-        "name": "L. Messi",
+        "name": "Messi",
         "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
         "position": "RW",
         "nationality": "Argentina",
@@ -21,7 +21,7 @@ export const data = {
       },
       {
         "id": 1,
-        "name": "C. Ronaldo",
+        "name": "Ronaldo",
         "photo": "https://cdn.sofifa.net/players/020/801/25_120.png",
         "position": "ST",
         "nationality": "Portugal",
@@ -38,7 +38,7 @@ export const data = {
       },
       {
         "id": 2,
-        "name": "K. De Bruyne",
+        "name": "De Bruyne",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "CM",
         "nationality": "Belgium",
@@ -55,7 +55,7 @@ export const data = {
       },
       {
         "id": 3,
-        "name": "K. Mbappé",
+        "name": "Mbappé",
         "photo": "https://cdn.sofifa.net/players/231/747/25_120.png",
         "position": "ST",
         "nationality": "France",
@@ -72,7 +72,7 @@ export const data = {
       },
       {
         "id": 4,
-        "name": "V. van Dijk",
+        "name": "van Dijk",
         "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
         "position": "CB",
         "nationality": "Netherlands",
@@ -89,7 +89,7 @@ export const data = {
       },
       {
         "id": 5,
-        "name": "A. Rudiger",
+        "name": "Rudiger",
         "photo": "https://cdn.sofifa.net/players/205/452/25_120.png",
         "position": "CB",
         "nationality": "Germany",
@@ -123,7 +123,7 @@ export const data = {
       },
       {
         "id": 7,
-        "name": "M. Salah",
+        "name": "Salah",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "RW",
         "nationality": "Egypt",
@@ -140,7 +140,7 @@ export const data = {
       },
       {
         "id": 8,
-        "name": "J. Kimmich",
+        "name": "Kimmich",
         "photo": "https://cdn.sofifa.net/players/212/622/25_120.png",
         "position": "CM",
         "nationality": "Germany",
@@ -157,7 +157,7 @@ export const data = {
       },
       {
         "id": 9,
-        "name": "Jan Oblak",
+        "name": "Oblak",
         "photo": "https://cdn.sofifa.net/players/200/389/25_120.png",
         "position": "GK",
         "nationality": "Slovenia",
@@ -174,7 +174,7 @@ export const data = {
       },
       {
         "id": 10,
-        "name": "Luka Modrić",
+        "name": "Modrić",
         "photo": "https://cdn.sofifa.net/players/177/003/25_120.png",
         "position": "CM",
         "nationality": "Croatia",
@@ -191,7 +191,7 @@ export const data = {
       },
       {
         "id": 11,
-        "name": "V. Junior",
+        "name": "Junior",
         "photo": "https://cdn.sofifa.net/players/238/794/25_120.png",
         "position": "LW",
         "nationality": "Brazil",
@@ -208,7 +208,7 @@ export const data = {
       },
       {
         "id": 12,
-        "name": "B. Diáz",
+        "name": "Diáz",
         "photo": "https://cdn.sofifa.net/players/231/410/25_120.png",
         "position": "LW",
         "nationality": "Morocco",
@@ -225,7 +225,7 @@ export const data = {
       },
       {
         "id": 13,
-        "name": "K. Benzema",
+        "name": "Benzema",
         "photo": "https://cdn.sofifa.net/players/165/153/25_120.png",
         "position": "ST",
         "nationality": "France",
@@ -242,7 +242,7 @@ export const data = {
       },
       {
         "id": 14,
-        "name": "E. Haaland",
+        "name": "Haaland",
         "photo": "https://cdn.sofifa.net/players/239/085/25_120.png",
         "position": "ST",
         "nationality": "Norway",
@@ -259,7 +259,7 @@ export const data = {
       },
       {
         "id": 15,
-        "name": "N. Kanté",
+        "name": "Kanté",
         "photo": "https://cdn.sofifa.net/players/215/914/25_120.png",
         "position": "CDM",
         "nationality": "France",
@@ -276,7 +276,7 @@ export const data = {
       },
       {
         "id": 16,
-        "name": "A. Davies",
+        "name": "Davies",
         "photo": "https://cdn.sofifa.net/players/234/396/25_120.png",
         "position": "LB",
         "nationality": "Canada",
@@ -293,7 +293,7 @@ export const data = {
       },
       {
         "id": 17,
-        "name": "Y. Bounou",
+        "name": "Bounou",
         "photo": "https://cdn.sofifa.net/players/209/981/25_120.png",
         "position": "GK",
         "nationality": "Morocco",
@@ -310,7 +310,7 @@ export const data = {
       },
       {
         "id": 18,
-        "name": "B. Fernandes",
+        "name": "Fernandes",
         "photo": "https://cdn.sofifa.net/players/212/198/25_120.png",
         "position": "CM",
         "nationality": "Portugal",
@@ -327,7 +327,7 @@ export const data = {
       },
       {
         "id": 19,
-        "name": "J. Sancho",
+        "name": "Sancho",
         "photo": "https://cdn.sofifa.net/players/233/049/25_120.png",
         "position": "LW",
         "nationality": "England",
@@ -344,7 +344,7 @@ export const data = {
       },
       {
         "id": 20,
-        "name": "A.-Arnold",
+        "name": "Arnold",
         "photo": "https://cdn.sofifa.net/players/231/281/25_120.png",
         "position": "RB",
         "nationality": "England",
@@ -360,7 +360,7 @@ export const data = {
       },
       {
         "id": 21,
-        "name": "A. Hakimi",
+        "name": "Hakimi",
         "photo": "https://cdn.sofifa.net/players/235/212/25_120.png",
         "position": "RB",
         "nationality": "Morocco",
@@ -377,7 +377,7 @@ export const data = {
       },
       {
         "id": 22,
-        "name": "Y. En-Nesyri",
+        "name": "En-Nesyri",
         "photo": "https://cdn.sofifa.net/players/235/410/25_120.png",
         "position": "ST",
         "nationality": "Morocco",
@@ -394,7 +394,7 @@ export const data = {
       },
       {
         "id": 23,
-        "name": "N. Mazraoui",
+        "name": "Mazraoui",
         "photo": "https://cdn.sofifa.net/players/236/401/25_120.png",
         "position": "LB",
         "nationality": "Morocco",
@@ -411,7 +411,7 @@ export const data = {
       },
       {
         "id": 24,
-        "name": "I. Saibari",
+        "name": "Saibari",
         "photo": "https://cdn.sofifa.net/players/259/480/25_120.png",
         "position": "CM",
         "nationality": "Morocco",
@@ -428,7 +428,7 @@ export const data = {
       },
       {
         "id": 25,
-        "name": "G. Donnarumma",
+        "name": "Donnarumma",
         "photo": "https://cdn.sofifa.net/players/230/621/25_120.png",
         "position": "GK",
         "nationality": "Italy",
