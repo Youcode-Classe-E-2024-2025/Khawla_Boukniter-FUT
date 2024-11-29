@@ -38,7 +38,7 @@ export const data = {
       },
       {
         "id": 2,
-        "name": "De Bruyne",
+        "name": "Bruyne",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "CM",
         "nationality": "Belgium",
@@ -72,7 +72,7 @@ export const data = {
       },
       {
         "id": 4,
-        "name": "van Dijk",
+        "name": "Dijk",
         "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
         "position": "CB",
         "nationality": "Netherlands",

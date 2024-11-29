@@ -227,11 +227,14 @@ function displayChangements() {
             playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
             playerCard.innerHTML = `
                                     <div class="bench-con flex flex-wrap gap-3">
-                                        <div class="slot relative text-center h-72 w-36">
+                                        <div class="slot relative text-center h-72 w-24">
                                             <button class="cardbutton button-reset" aria-label="Card Button">
                                                 <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
                                                 <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
-                                                    <img src="${player.photo}" alt="${player.name}">
+                                                    <img src="${player.photo}" alt="${player.name}" style="width: 40">
+                                                    <div class="player-info">
+                                                        <span style="font-size: smaller">${player.name}</span>
+                                                    </div>
                                                 </div>
                                             </button>
                                         </div>
@@ -285,9 +288,12 @@ document.querySelector('.add-chang').addEventListener('click', () => {
                 playerCard.addEventListener('click', () => {
                     changements.push(player);
                     console.log(changements);
+                    displayChangements();
+                    filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
                 });
+                
             });
-            displayChangements();
+            
 });
 
 
