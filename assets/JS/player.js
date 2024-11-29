@@ -1,12 +1,13 @@
 import {data} from './data.js';
 
 document.addEventListener("DOMContentLoaded", () => {
-    displayCard();
 
     let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
     localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
 
     console.log(JSON.parse(localStorage.getItem('dataPlayer')));
+
+    displayCard();
     
 
     console.log(dataPlayer);
@@ -91,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
                 card.addEventListener('click', () => {
                     updatePlayer();
-                });  
+                });
                 return card;        
     }
 
@@ -144,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             physical: document.querySelector('#physical').value,
             photo: document.querySelector('#image').value,
         };
+        eventListeners();
 
         dataPlayer[index] = updatedPlayer;
         localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));

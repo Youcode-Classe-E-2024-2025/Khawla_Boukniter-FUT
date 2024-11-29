@@ -3,6 +3,7 @@
 export const data = {
     "players": [
       {
+        "id": 0,
         "name": "L. Messi",
         "photo": "https://cdn.sofifa.net/players/158/023/25_120.png",
         "position": "RW",
@@ -19,6 +20,7 @@ export const data = {
         "physical": 65
       },
       {
+        "id": 1,
         "name": "C. Ronaldo",
         "photo": "https://cdn.sofifa.net/players/020/801/25_120.png",
         "position": "ST",
@@ -35,6 +37,7 @@ export const data = {
         "physical": 77
       },
       {
+        "id": 2,
         "name": "K. De Bruyne",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "CM",
@@ -51,6 +54,7 @@ export const data = {
         "physical": 78
       },
       {
+        "id": 3,
         "name": "K. Mbappé",
         "photo": "https://cdn.sofifa.net/players/231/747/25_120.png",
         "position": "ST",
@@ -67,6 +71,7 @@ export const data = {
         "physical": 77
       },
       {
+        "id": 4,
         "name": "V. van Dijk",
         "photo": "https://cdn.sofifa.net/players/203/376/25_120.png",
         "position": "CB",
@@ -83,6 +88,7 @@ export const data = {
         "physical": 86
       },
       {
+        "id": 5,
         "name": "A. Rudiger",
         "photo": "https://cdn.sofifa.net/players/205/452/25_120.png",
         "position": "CB",
@@ -99,6 +105,7 @@ export const data = {
         "physical": 86
       },
       {
+        "id": 6,
         "name": "Neymar Jr",
         "photo": "https://cdn.sofifa.net/players/190/871/25_120.png",
         "position": "LW",
@@ -115,6 +122,7 @@ export const data = {
         "physical": 61
       },
       {
+        "id": 7,
         "name": "M. Salah",
         "photo": "https://cdn.sofifa.net/players/192/985/25_120.png",
         "position": "RW",
@@ -131,6 +139,7 @@ export const data = {
         "physical": 75
       },
       {
+        "id": 8,
         "name": "J. Kimmich",
         "photo": "https://cdn.sofifa.net/players/212/622/25_120.png",
         "position": "CM",
@@ -147,6 +156,7 @@ export const data = {
         "physical": 81
       },
       {
+        "id": 9,
         "name": "Jan Oblak",
         "photo": "https://cdn.sofifa.net/players/200/389/25_120.png",
         "position": "GK",
@@ -158,11 +168,12 @@ export const data = {
         "pace": 89,
         "shooting": 90,
         "passing": 78,
-        "dribling": 92,
+        "dribbling": 92,
         "defending": 50,
         "physical": 88
       },
       {
+        "id": 10,
         "name": "Luka Modrić",
         "photo": "https://cdn.sofifa.net/players/177/003/25_120.png",
         "position": "CM",
@@ -179,6 +190,7 @@ export const data = {
         "physical": 65
       },
       {
+        "id": 11,
         "name": "V. Junior",
         "photo": "https://cdn.sofifa.net/players/238/794/25_120.png",
         "position": "LW",
@@ -195,6 +207,7 @@ export const data = {
         "physical": 61
       },
       {
+        "id": 12,
         "name": "B. Diáz",
         "photo": "https://cdn.sofifa.net/players/231/410/25_120.png",
         "position": "LW",
@@ -211,6 +224,7 @@ export const data = {
         "physical": 56
       },
       {
+        "id": 13,
         "name": "K. Benzema",
         "photo": "https://cdn.sofifa.net/players/165/153/25_120.png",
         "position": "ST",
@@ -227,6 +241,7 @@ export const data = {
         "physical": 78
       },
       {
+        "id": 14,
         "name": "E. Haaland",
         "photo": "https://cdn.sofifa.net/players/239/085/25_120.png",
         "position": "ST",
@@ -243,6 +258,7 @@ export const data = {
         "physical": 88
       },
       {
+        "id": 15,
         "name": "N. Kanté",
         "photo": "https://cdn.sofifa.net/players/215/914/25_120.png",
         "position": "CDM",
@@ -259,6 +275,7 @@ export const data = {
         "physical": 82
       },
       {
+        "id": 16,
         "name": "A. Davies",
         "photo": "https://cdn.sofifa.net/players/234/396/25_120.png",
         "position": "LB",
@@ -275,6 +292,7 @@ export const data = {
         "physical": 77
       },
       {
+        "id": 17,
         "name": "Y. Bounou",
         "photo": "https://cdn.sofifa.net/players/209/981/25_120.png",
         "position": "GK",
@@ -286,11 +304,12 @@ export const data = {
         "pace": 81,
         "shooting": 82,
         "passing": 77,
-        "dribling": 86,
+        "dribbling": 86,
         "defending": 38,
         "physical": 83
       },
       {
+        "id": 18,
         "name": "B. Fernandes",
         "photo": "https://cdn.sofifa.net/players/212/198/25_120.png",
         "position": "CM",
@@ -307,6 +326,7 @@ export const data = {
         "physical": 77
       },
       {
+        "id": 19,
         "name": "J. Sancho",
         "photo": "https://cdn.sofifa.net/players/233/049/25_120.png",
         "position": "LW",
@@ -323,6 +343,7 @@ export const data = {
         "physical": 63
       },
       {
+        "id": 20,
         "name": "A.-Arnold",
         "photo": "https://cdn.sofifa.net/players/231/281/25_120.png",
         "position": "RB",
@@ -338,6 +359,7 @@ export const data = {
         "physical": 71
       },
       {
+        "id": 21,
         "name": "A. Hakimi",
         "photo": "https://cdn.sofifa.net/players/235/212/25_120.png",
         "position": "RB",
@@ -354,6 +376,7 @@ export const data = {
         "physical": 78
       },
       {
+        "id": 22,
         "name": "Y. En-Nesyri",
         "photo": "https://cdn.sofifa.net/players/235/410/25_120.png",
         "position": "ST",
@@ -370,6 +393,7 @@ export const data = {
         "physical": 80
       },
       {
+        "id": 23,
         "name": "N. Mazraoui",
         "photo": "https://cdn.sofifa.net/players/236/401/25_120.png",
         "position": "LB",
@@ -386,6 +410,7 @@ export const data = {
         "physical": 71
       },
       {
+        "id": 24,
         "name": "I. Saibari",
         "photo": "https://cdn.sofifa.net/players/259/480/25_120.png",
         "position": "CM",
@@ -402,6 +427,7 @@ export const data = {
         "physical": 84
       },
       {
+        "id": 25,
         "name": "G. Donnarumma",
         "photo": "https://cdn.sofifa.net/players/230/621/25_120.png",
         "position": "GK",
@@ -413,7 +439,7 @@ export const data = {
         "pace": 88,
         "shooting": 84,
         "passing": 75,
-        "dribling": 90,
+        "dribbling": 90,
         "defending": 50,
         "physical": 85
       }

@@ -658,10 +658,6 @@ video {
   margin-right: 3rem;
 }
 
-.block {
-  display: block;
-}
-
 .flex {
   display: flex;
 }
@@ -677,6 +673,11 @@ video {
 .size-5 {
   width: 1.25rem;
   height: 1.25rem;
+}
+
+.size-6 {
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .h-16 {
@@ -827,6 +828,10 @@ video {
 
 .gap-\[5\.4rem\] {
   gap: 5.4rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .justify-self-center {

@@ -1,3 +1,10 @@
+import {data} from './data.js';
+
+const dataPlayer = JSON.parse(localStorage.getItem('dataPlayer'));
+
+window.onload = () => {
+    updateFormation("3-5-2");
+};
 
 const formations = {
     "3-5-2": [
@@ -99,9 +106,6 @@ const formationBtn = document.querySelector('.formation-btn');
 const formationOptions = document.querySelector('.formation-options');
 const options = document.querySelectorAll('.option');
 
-formationBtn.addEventListener('click', () => {
-    formationOptions.style.display = formationOptions.style.display === "grid" ? "none" : "grid";
-});
 
 options.forEach(option => {
     option.addEventListener('click', () => {
@@ -113,14 +117,11 @@ options.forEach(option => {
     });
 });
 
-window.onload = () => {
-    updateFormation("3-5-2");
-};
-
-
 formationBtn.addEventListener('click', () => {
     document.querySelector('.formation-options').classList.toggle('hidden');
+    formationOptions.style.display = formationOptions.style.display === "grid" ? "none" : "grid";
 });
+
 document.querySelectorAll('.option').forEach(option => {
     option.addEventListener('click', () => {
         option.classList.add('selected');
@@ -133,3 +134,76 @@ document.querySelectorAll('.option').forEach(option => {
         document.querySelector('.formation-options').classList.add('hidden');
     });
 });
+
+const addBtn = document.querySelectorAll('.player-cards');
+let selectedPlaceholder;
+
+function playersList() {
+    
+    addBtn.forEach(btn => {
+        btn.addEventListener('click', () => {
+            console.log(btn);
+            selectedPlaceholder = btn;
+            
+            document.querySelector('.players').classList.contains('hidden') ? document.querySelector('.players').classList.remove('hidden') : document.querySelector('.players').classList.add('hidden');
+            document.querySelector('.players').innerHTML = '';
+            const container = document.createElement('div');
+            container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
+
+            data.players.forEach(player => {
+            const playerCard = document.createElement('div');
+            playerCard.setAttribute('id', player.id);
+            playerCard.setAttribute("onclick", `selectPlayer(${player.id})`);
+
+            playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+            playerCard.innerHTML = `
+                                    <div class="bench-con flex flex-wrap gap-3">
+                                        <div class="slot relative text-center h-72 w-36">
+                                            <button class="cardbutton button-reset" aria-label="Card Button">
+                                                <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                                <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                                                    <img src="${player.photo}" alt="${player.name}">
+                                                    <div class="player-info">
+                                                        <span style="font-size: smaller">${player.name}</span>
+                                                        <p>${player.position}</p>
+                                                    </div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                
+                
+            `;
+            container.appendChild(playerCard);
+            document.querySelector('.players').appendChild(container);
+            });
+        });
+    });
+}
+
+addBtn.forEach(btn => {
+    btn.addEventListener('click', playersList);
+});
+
+window.selectPlayer = function selectPlayer(id) {
+    console.log(selectedPlaceholder);
+    
+    const player = data.players.find(player => player.id == id);
+    selectedPlaceholder.innerHTML = `
+        <div class="bench-con flex flex-wrap gap-3">
+            <div class="slot relative text-center h-72 w-36">
+                <button class="cardbutton button-reset" aria-label="Card Button">
+                    <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                    <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                        <img src="${player.photo}" alt="${player.name}">
+                        <div class="player-info">
+                            <span style="font-size: smaller">${player.name}</span>
+                            <p>${player.position}</p>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    `;
+    console.log(player);
+}

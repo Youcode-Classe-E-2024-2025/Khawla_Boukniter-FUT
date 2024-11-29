@@ -20,10 +20,10 @@
     </header>
     <main class="p-24">
         <div class="flex justify-around">
-                <div class="terrain h-[560px] w-[689px]" style="background-image: url('assets/images/terrain.svg'); background-size: cover;">
-                    <div class="flex h-16 mb-12"></div>
+            <div class="terrain h-[560px] w-[689px]" style="background-image: url('assets/images/terrain.svg'); background-size: cover;">
+                <div class="flex h-16 mb-12"></div>
                     <div class="flex flex-col gap-16">
-                        <div class="att h-32 flex justify-around">
+                        <div class="h-32 flex justify-around">
                             <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
                                 <div class="bench-con flex flex-wrap gap-3">
                                     <div class="slot relative text-center h-72 w-36">
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mid h-32 flex justify-around">
+                        <div class="h-32 flex justify-around">
                             <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
                                 <div class="bench-con flex flex-wrap gap-3">
                                     <div class="slot relative text-center h-72 w-36">
@@ -146,7 +146,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="def h-32 flex justify-around">
+                        <div class="h-32 flex justify-around">
                             <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
                                 <div class="bench-con flex flex-wrap gap-3">
                                     <div class="slot relative text-center h-72 w-36">
@@ -199,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="goal h-32 justify-items-center">
+                        <div class="h-32 justify-items-center">
                             <div class="player-cards bench-reserver-wrapper non-draggable-images m-8 w-fit flex gap-6 flex-wrap justify-evenly relative">
                                 <div class="bench-con flex flex-wrap gap-3">
                                     <div class="slot relative text-center h-72 w-36">
@@ -221,25 +221,40 @@
                     </div>
                 </div>
                 <div class="formation bg-[#1E1E1E] rounded-lg p-6 flex flex-col gap-3 w-[28rem] h-fit">
-                    <h3>Formation</h3>
-                    <div class="flex flex-col">
-                        <button class="formation-btn flex items-center justify-between px-3 flex-1 min-h-9 border border-solid border-[#696969] rounded">
-                            <span id="option">3-5-2</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                            </svg>
-                        </button>
-                        <div class="formation-options hidden grid grid-cols-[1fr_1fr] gap-2 py-3">
-                            <button class="option bg-[#404040] px-4 py-2 rounded selected">3-5-2</button>
-                            <button class="option bg-[#404040] px-4 py-2 rounded">3-4-3</button>
-                            <button class="option bg-[#404040] px-4 py-2 rounded">4-2-4</button>
-                            <button class="option bg-[#404040] px-4 py-2 rounded">5-2-3</button>
-                            <button class="option bg-[#404040] px-4 py-2 rounded">5-3-2</button>
-                            <button class="option bg-[#404040] px-4 py-2 rounded">5-4-1</button>
+                    <div>
+                        <h3>Formation</h3>
+                        <div class="flex flex-col">
+                            <button class="formation-btn flex items-center justify-between px-3 flex-1 min-h-9 border border-solid border-[#696969] rounded">
+                                <span id="option">3-5-2</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </button>
+                            <div class="formation-options hidden grid grid-cols-[1fr_1fr] gap-2 py-3">
+                                <button class="option bg-[#404040] px-4 py-2 rounded selected">3-5-2</button>
+                                <button class="option bg-[#404040] px-4 py-2 rounded">3-4-3</button>
+                                <button class="option bg-[#404040] px-4 py-2 rounded">4-2-4</button>
+                                <button class="option bg-[#404040] px-4 py-2 rounded">5-2-3</button>
+                                <button class="option bg-[#404040] px-4 py-2 rounded">5-3-2</button>
+                                <button class="option bg-[#404040] px-4 py-2 rounded">5-4-1</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <h3>Changements</h3>
+                        <div class="flex justify-center">
+                            <button class="add-chang">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="players hidden">
+            <h3 class="text-center">Players</h3>
         </div>
     </main>
     <footer></footer>
