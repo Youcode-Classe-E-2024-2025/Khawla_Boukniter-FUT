@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 `;
                 card.addEventListener('click', () => {
+                    document.querySelector('.player-form .fut-player-card').classList.add('hidden');
                     updatePlayer();
                 });
                 return card;        

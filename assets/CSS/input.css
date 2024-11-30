@@ -16,6 +16,8 @@ body {
   gap: 1.25rem;
 }
 
+
+
 @media (max-width: 1024px) {
     .terrain {
       background-size: contain;
@@ -31,9 +33,9 @@ body {
       font-size: 1rem;
     }
     .distribution {
-      gap: 3rem;
+      gap: 1rem;
     }
-    .add-icon svg {
+    .home .add-icon svg {
       width: 20px;
     }
     main {
@@ -43,8 +45,11 @@ body {
       height: 455px;
     }
     
-    .placeholder-img {
+    .home .placeholder-img {
       height: 10rem;
+    }
+    .cards .placeholder-img {
+      height: 18rem;
     }
     .changements .placeholder-img {
       height: 7rem;
@@ -61,7 +66,7 @@ body {
     .add-icon {
       top: 50%;
     }
-    
+
     .slot {
       width: auto;
       top: 51%;
@@ -78,6 +83,14 @@ body {
     }
     .players-list .player-cards{
       margin: 1rem;
+    }
+    .terrain > div:first-child {
+      height: 8rem;
+    }
+    .player-form {
+      position: absolute;
+      gap: 2rem;
+      width: 60%;
     }
   }
   
@@ -97,17 +110,17 @@ body {
     main > div:first-of-type {
       display: block;
     }
-    .placeholder-img {
-      height: 7rem;
-    }
-    .distribution > div {
+    .terrain .placeholder-img {
       height: 6rem;
     }
+    .distribution > div {
+      height: 5rem;
+    }
     .distribution {
-      gap: 0;
+      gap: 1rem;
     }
     .terrain > div:first-of-type {
-      height: 7rem;
+      height: 10rem;
     }
     .formation {
       width: 30rem;
@@ -136,10 +149,12 @@ body {
     .players-list .player-cards{
       margin: 0;
     }
-    .add-icon div{
+    .home .add-icon div{
       font-size: 1.3rem;
     }
-    .add-icon svg {
+    .home  .add-icon svg {
       width: 18px;
-  }
+    }
+    
+    
   }
