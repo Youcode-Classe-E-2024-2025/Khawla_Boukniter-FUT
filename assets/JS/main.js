@@ -41,7 +41,7 @@ const formations = {
         { top: "-4rem", left: "-auto" },
         { top: "-18rem", left: "10rem" },
         { top: "-4rem", left: "auto" },
-        { top: "9rem", left: "-1rem" },
+        { top: "6rem", left: "-1rem" },
         { top: "-7rem", left: "-4rem" },
         { top: "-3rem", left: "-11rem" },
         { top: "-3rem", left: "-12rem" },
@@ -147,14 +147,15 @@ function playersList() {
 
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
+            const playersInChang = changements.map(player => player.id);
             console.log(playersEnTerrain);
             
-            const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
+            const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()) && !playersInChang.includes(player.id));
 
-            document.querySelector('.players').classList.remove('hidden');
+            document.querySelector('.players').classList.toggle('hidden');
             document.querySelector('.players').innerHTML = '';
             const container = document.createElement('div');
-            container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
+            container.classList.add('players-list', 'flex', 'flex-wrap', 'justify-center');
 
             filteredDataPlayer.forEach(player => {
             const playerCard = document.createElement('div');
@@ -308,7 +309,7 @@ function addChangements() {
     console.log(document.querySelector('.add-chang'));
     
         document.querySelector('.players').innerHTML = '<h3 class="text-center mb-10">Players</h3>';
-        document.querySelector('.players').classList.add('absolute', 'top-[10.3%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
+        document.querySelector('.players').classList.add('absolute', 'top-[16%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
             
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));

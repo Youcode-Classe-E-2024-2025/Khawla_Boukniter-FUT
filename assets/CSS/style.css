@@ -620,24 +620,24 @@ video {
   top: 9rem;
 }
 
-.top-\[40\%\] {
-  top: 40%;
+.top-\[10\.3\%\] {
+  top: 10.3%;
 }
 
-.top-\[50\%\] {
-  top: 50%;
+.top-\[16\%\] {
+  top: 16%;
+}
+
+.top-\[40\%\] {
+  top: 40%;
 }
 
 .top-\[47\%\] {
   top: 47%;
 }
 
-.top-\[11\%\] {
-  top: 11%;
-}
-
-.top-\[10\.3\%\] {
-  top: 10.3%;
+.top-\[50\%\] {
+  top: 50%;
 }
 
 .top-\[65\%\] {
@@ -666,20 +666,24 @@ video {
   margin-bottom: 1rem;
 }
 
-.mb-12 {
-  margin-bottom: 3rem;
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
-.mr-12 {
-  margin-right: 3rem;
+.mb-12 {
+  margin-bottom: 3rem;
 }
 
 .mb-2 {
   margin-bottom: 0.5rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mr-12 {
+  margin-right: 3rem;
 }
 
 .flex {
@@ -716,6 +720,10 @@ video {
   height: 11rem;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .h-64 {
   height: 16rem;
 }
@@ -731,10 +739,6 @@ video {
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
-}
-
-.h-48 {
-  height: 12rem;
 }
 
 .min-h-9 {
@@ -761,6 +765,10 @@ video {
   width: 45%;
 }
 
+.w-\[64\%\] {
+  width: 64%;
+}
+
 .w-\[689px\] {
   width: 689px;
 }
@@ -772,10 +780,6 @@ video {
 .w-fit {
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.w-\[64\%\] {
-  width: 64%;
 }
 
 .flex-1 {
@@ -792,6 +796,10 @@ video {
 
 .grid-cols-\[1fr_1fr\] {
   grid-template-columns: 1fr 1fr;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-col {
@@ -850,12 +858,12 @@ video {
   gap: 1rem;
 }
 
-.gap-6 {
-  gap: 1.5rem;
+.gap-5 {
+  gap: 1.25rem;
 }
 
-.gap-8 {
-  gap: 2rem;
+.gap-6 {
+  gap: 1.5rem;
 }
 
 .gap-\[3\.6rem\] {
@@ -880,10 +888,6 @@ video {
 
 .gap-\[5\.4rem\] {
   gap: 5.4rem;
-}
-
-.gap-5 {
-  gap: 1.25rem;
 }
 
 .justify-self-center {
@@ -916,6 +920,10 @@ video {
   background-color: rgb(30 30 30 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#1e1e1ecc\] {
+  background-color: #1e1e1ecc;
+}
+
 .bg-\[\#404040\] {
   --tw-bg-opacity: 1;
   background-color: rgb(64 64 64 / var(--tw-bg-opacity, 1));
@@ -936,29 +944,8 @@ video {
   background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
 }
 
-.bg-gray-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#1e1e1eb6\] {
-  background-color: #1e1e1eb6;
-}
-
-.bg-\[\#1e1e1ec3\] {
-  background-color: #1e1e1ec3;
-}
-
-.bg-\[\#1e1e1ecc\] {
-  background-color: #1e1e1ecc;
-}
-
 .p-10 {
   padding: 2.5rem;
-}
-
-.p-20 {
-  padding: 5rem;
 }
 
 .p-5 {
@@ -967,10 +954,6 @@ video {
 
 .p-6 {
   padding: 1.5rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
 }
 
 .p-\[2\.2rem\] {
@@ -1001,11 +984,6 @@ video {
   text-align: center;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
@@ -1030,6 +1008,22 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+main {
+  padding: 5rem;
+}
+
+body {
+  font-size: 1.5rem;
+}
+
+.distribution {
+  gap: 4rem;
+}
+
+.players-list {
+  gap: 1.25rem;
+}
+
 @media (max-width: 1024px) {
   .terrain {
     background-size: contain;
@@ -1037,9 +1031,17 @@ video {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 769px) {
   html {
     font-size: 8px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .distribution {
+    gap: 3rem;
   }
 
   .add-icon svg {
@@ -1047,37 +1049,59 @@ video {
   }
 
   main {
-    padding: 4rem;
+    padding: 3.5rem 1rem;
   }
 
   .terrain {
     height: 455px;
   }
 
-  .changements {
-    width: 20rem;
+  .placeholder-img {
+    height: 10rem;
   }
 
-  .placeholder-img {
-    height: 12rem;
+  .changements .placeholder-img {
+    height: 7rem;
+  }
+
+  .changements .player-info {
+    font-size: 0.6rem;
+  }
+
+  .changements .slot {
+    top: 45%;
+  }
+
+  .formation {
+    width: 15rem;
   }
 
   .add-icon {
-    top: 35%;
+    top: 50%;
   }
 
-  .player-cards {
-    margin: auto;
-  }
-
-  .players .slot {
+  .slot {
     width: auto;
-    height: 13rem;
-    top: 65%;
+    top: 51%;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   button {
     font-size: 1rem;
+  }
+
+  .players {
+    width: 80%;
+  }
+
+  .bench-con {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .players-list .player-cards{
+    margin: 1rem;
   }
 }
 
@@ -1087,10 +1111,76 @@ video {
   }
 
   .terrain {
-    height: 395px;
+    height: 340px;
+    width: 395px;
+    right: 4%;
+    position: absolute;
   }
 
   main {
     padding: 2rem;
+  }
+
+  main > div:first-of-type {
+    display: block;
+  }
+
+  .placeholder-img {
+    height: 7rem;
+  }
+
+  .distribution > div {
+    height: 6rem;
+  }
+
+  .distribution {
+    gap: 0;
+  }
+
+  .terrain > div:first-of-type {
+    height: 7rem;
+  }
+
+  .formation {
+    width: 30rem;
+    justify-self: center;
+  }
+
+  .formation-options {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .players {
+    top: 45%;
+    padding: 1rem;
+    width: 90%;
+  }
+
+  .option {
+    font-size: xx-small;
+  }
+
+  .player-info p {
+    display: none;
+  }
+
+  .player-info {
+    font-size: 0.6rem;
+  }
+
+  .player-cards {
+    margin: 0;
+  }
+
+  .players-list .player-cards{
+    margin: 0;
+  }
+
+  .add-icon div{
+    font-size: 1.3rem;
+  }
+
+  .add-icon svg {
+    width: 18px;
   }
 }

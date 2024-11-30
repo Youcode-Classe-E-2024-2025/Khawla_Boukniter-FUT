@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-    
+main {
+  padding: 5rem;
+}
+
+body {
+  font-size: 1.5rem;
+}
+.distribution {
+  gap: 4rem;
+}
+.players-list {
+  gap: 1.25rem;
+}
+
 @media (max-width: 1024px) {
     .terrain {
       background-size: contain;
@@ -10,38 +23,61 @@
     }
   }
   
-  @media (max-width: 768px) {
+  @media (max-width: 769px) {
     html {
       font-size: 8px;
+    }
+    body {
+      font-size: 1rem;
+    }
+    .distribution {
+      gap: 3rem;
     }
     .add-icon svg {
       width: 20px;
     }
     main {
-      padding: 4rem;
+      padding: 3.5rem 1rem;
     }
     .terrain {
       height: 455px;
     }
-    .changements {
-      width: 20rem;
-    }
+    
     .placeholder-img {
-      height: 12rem;
+      height: 10rem;
+    }
+    .changements .placeholder-img {
+      height: 7rem;
+    }
+    .changements .player-info {
+      font-size: 0.6rem;
+    }
+    .changements .slot {
+      top: 45%;
+    }
+    .formation {
+      width: 15rem;
     }
     .add-icon {
-      top: 35%;
+      top: 50%;
     }
-    .player-cards {
-      margin: auto;
-    }
-    .players .slot {
+    
+    .slot {
       width: auto;
-      height: 13rem;
-      top: 65%;
+      top: 51%;
+      height: fit-content;
     }
     button {
       font-size: 1rem;
+    }
+    .players {
+      width: 80%;
+    }
+    .bench-con {
+      height: fit-content;
+    }
+    .players-list .player-cards{
+      margin: 1rem;
     }
   }
   
@@ -50,9 +86,60 @@
       font-size: 6px;
     }
     .terrain {
-      height: 395px;
+      height: 340px;
+      width: 395px;
+      right: 4%;
+      position: absolute;
     }
     main {
       padding: 2rem;
     }
+    main > div:first-of-type {
+      display: block;
+    }
+    .placeholder-img {
+      height: 7rem;
+    }
+    .distribution > div {
+      height: 6rem;
+    }
+    .distribution {
+      gap: 0;
+    }
+    .terrain > div:first-of-type {
+      height: 7rem;
+    }
+    .formation {
+      width: 30rem;
+      justify-self: center;
+    }
+    .formation-options {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .players {
+      top: 45%;
+      padding: 1rem;
+      width: 90%;
+    }
+    .option {
+      font-size: xx-small;
+    }
+    .player-info p {
+      display: none;
+    }
+    .player-info {
+      font-size: 0.6rem;
+    }
+    .player-cards {
+      margin: 0;
+    }
+    .players-list .player-cards{
+      margin: 0;
+    }
+    .add-icon div{
+      font-size: 1.3rem;
+    }
+    .add-icon svg {
+      width: 18px;
+  }
   }
