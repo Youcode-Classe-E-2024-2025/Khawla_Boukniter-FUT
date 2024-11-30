@@ -243,6 +243,55 @@ function displayChangements() {
                 displayChangements();
             });
         });
+        if (changements.length < 12) {
+            document.querySelector('.add-chang').classList.remove('hidden');
+            
+
+        //     document.querySelector('.add-chang').addEventListener('click', function() {
+        //         // document.querySelector(".players").classList.toggle('hidden');
+        //         const container = document.createElement('div');
+        //         container.classList.add('players-list', 'flex', 'gap-5', 'flex-wrap', 'justify-center');
+        
+        //         document.querySelector('.players').innerHTML = '<h3 class="text-center mb-10">Players</h3>';
+        //         document.querySelector('.players').classList.add('absolute', 'top-[10.3%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
+        //         document.querySelector('.players').classList.remove('hidden');
+        
+        //         const playersInChang = changements.map(player => player.id);
+        //         const filteredDataPlayer = dataPlayer.filter(player => !playersInChang.includes(player.id));
+        
+        //         filteredDataPlayer.forEach(player => {
+        //             const playerCard = document.createElement('div');
+        //             playerCard.setAttribute('id', player.id);
+        
+        //             playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+        //             playerCard.innerHTML = `
+        //                 <div class="bench-con flex flex-wrap gap-3">
+        //                     <div class="slot relative text-center h-64 w-36">
+        //                         <button class="cardbutton button-reset" aria-label="Card Button">
+        //                             <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+        //                             <div class="slot absolute left-1/2 top-[47%]" style="translate: -50% -50%">
+        //                                 <img src="${player.photo}" alt="${player.name}">
+        //                                 <div class="player-info">
+        //                                     <span style="font-size: smaller">${player.name}</span>
+        //                                     <p>${player.position}</p>
+        //                                 </div>
+        //                             </div>
+        //                         </button>
+        //                     </div>
+        //                 </div>
+        //             `;
+        //             container.appendChild(playerCard);
+        //             document.querySelector('.players').appendChild(container);
+        
+        //             playerCard.addEventListener('click', function () {
+        //                 changements.push(player);
+        //                 console.log(changements);
+        //                 displayChangements();
+        //                 this.remove();
+        //             });
+        //         });
+        //     });
+        }
     
     if (changements.length === 12) {
         document.querySelector('.add-chang').classList.add('hidden');
@@ -250,15 +299,17 @@ function displayChangements() {
     }
 }
 
-document.querySelector('.add-chang').addEventListener('click', () => {
+document.querySelector('.add-chang').addEventListener('click', addChangements);          
 
+function addChangements() {
+    document.querySelector(".players").classList.toggle('hidden');
     const container = document.createElement('div');
     container.classList.add('players-list', 'flex', 'gap-5', 'flex-wrap', 'justify-center');
     console.log(document.querySelector('.add-chang'));
-
+    
         document.querySelector('.players').innerHTML = '<h3 class="text-center mb-10">Players</h3>';
         document.querySelector('.players').classList.add('absolute', 'top-[10.3%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
-            document.querySelector(".players").classList.toggle('hidden');
+            
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
             console.log(playersEnTerrain);
@@ -295,7 +346,4 @@ document.querySelector('.add-chang').addEventListener('click', () => {
                 });
                 
             });
-            
-});
-
-
+}
