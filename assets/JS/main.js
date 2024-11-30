@@ -9,8 +9,8 @@ window.onload = () => {
 
 const formations = {
     "3-5-2": [
-        { top: "-6rem", left: "auto" },
-        { top: "-6rem", left: "auto" },
+        { top: "-7rem", left: "auto" },
+        { top: "-5rem", left: "-2rem" },
         { top: "-6rem", left: "auto" },
         { top: "-3rem", left: "auto" },
         { top: "-6rem", left: "auto" },
@@ -151,7 +151,7 @@ function playersList() {
             
             const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
 
-            document.querySelector('.players').classList.toggle('hidden');
+            document.querySelector('.players').classList.remove('hidden');
             document.querySelector('.players').innerHTML = '';
             const container = document.createElement('div');
             container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
@@ -164,10 +164,10 @@ function playersList() {
             playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
             playerCard.innerHTML = `
                                     <div class="bench-con flex flex-wrap gap-3">
-                                        <div class="slot relative text-center h-72 w-36">
+                                        <div class="slot relative text-center h-48 w-36">
                                             <button class="cardbutton button-reset" aria-label="Card Button">
                                                 <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
-                                                <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                                                <div class="slot absolute left-1/2 top-[65%]" style="translate: -50% -50%">
                                                     <img src="${player.photo}" alt="${player.name}">
                                                     <div class="player-info">
                                                         <span style="font-size: smaller">${player.name}</span>
@@ -216,18 +216,15 @@ window.selectPlayer = function selectPlayer(id) {
 
 let changements = [];
 function displayChangements() {
-    if (changements.length > 0) {
         const container = document.querySelector('.changements');
         container.innerHTML = '';
         changements.forEach(player => {
             const playerCard = document.createElement('div');
-            // playerCard.setAttribute('id', player.id);
-            // playerCard.setAttribute("onclick", `selectPlayer(${player.id})`);
     
-            playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+            playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
             playerCard.innerHTML = `
                                     <div class="bench-con flex flex-wrap gap-3">
-                                        <div class="slot relative text-center h-72 w-24">
+                                        <div class="slot relative text-center h-44 w-24">
                                             <button class="cardbutton button-reset" aria-label="Card Button">
                                                 <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
                                                 <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
@@ -241,37 +238,43 @@ function displayChangements() {
                                     </div>
             `;
             container.appendChild(playerCard);
+            playerCard.addEventListener('click', function() {
+                changements = changements.filter(p => p.id !== player.id);
+                displayChangements();
+            });
         });
+    
+    if (changements.length === 12) {
+        document.querySelector('.add-chang').classList.add('hidden');
+        document.querySelector('.players').classList.add('hidden');
     }
 }
 
-
 document.querySelector('.add-chang').addEventListener('click', () => {
 
-    
     const container = document.createElement('div');
-    container.classList.add('players-list', 'flex', 'gap-3', 'flex-wrap', 'justify-center');
+    container.classList.add('players-list', 'flex', 'gap-5', 'flex-wrap', 'justify-center');
     console.log(document.querySelector('.add-chang'));
 
-        document.querySelector('.players').innerHTML = '<h3 class="text-center">Players</h3>';
-
+        document.querySelector('.players').innerHTML = '<h3 class="text-center mb-10">Players</h3>';
+        document.querySelector('.players').classList.add('absolute', 'top-[10.3%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
             document.querySelector(".players").classList.toggle('hidden');
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
             console.log(playersEnTerrain);
-            
+
             const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
             filteredDataPlayer.forEach(player => {
                 const playerCard = document.createElement('div');
                 playerCard.setAttribute('id', player.id);
 
-                playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'm-8', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
+                playerCard.classList.add('player-cards', 'bench-reserver-wrapper', 'non-draggable-images', 'w-fit', 'flex', 'gap-6', 'flex-wrap', 'justify-evenly', 'relative');
                 playerCard.innerHTML = `
                                         <div class="bench-con flex flex-wrap gap-3">
-                                            <div class="slot relative text-center h-72 w-36">
+                                            <div class="slot relative text-center h-64 w-36">
                                                 <button class="cardbutton button-reset" aria-label="Card Button">
                                                     <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
-                                                    <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
+                                                    <div class="slot absolute left-1/2 top-[47%]" style="translate: -50% -50%">
                                                         <img src="${player.photo}" alt="${player.name}">
                                                         <div class="player-info">
                                                             <span style="font-size: smaller">${player.name}</span>
@@ -281,15 +284,14 @@ document.querySelector('.add-chang').addEventListener('click', () => {
                                                 </button>
                                             </div>
                                         </div>
-                    
                 `;
                 container.appendChild(playerCard);
                 document.querySelector('.players').appendChild(container);
-                playerCard.addEventListener('click', () => {
+                playerCard.addEventListener('click', function() {
                     changements.push(player);
                     console.log(changements);
                     displayChangements();
-                    filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
+                    this.remove()
                 });
                 
             });
