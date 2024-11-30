@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //         </div>
         //     </div>
         // `;
-        // card.innerHTML = createCardContent(updatedPlayer)
+        card.innerHTML = createCardContent(updatedPlayer)
         document.querySelector('.player-form').classList.add('hidden');
         document.querySelector('.cards').classList.remove('blur');
 
@@ -322,6 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#nationality').value = '';
         document.querySelector('#position').value = '';
         document.querySelector('#club').value = '';
+        document.querySelector('#logo').value = '';
         document.querySelector('#pace').value = '';
         document.querySelector('#shooting').value = '';
         document.querySelector('#passing').value = '';
@@ -329,6 +330,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('#defending').value = '';
         document.querySelector('#physical').value = '';
         document.querySelector('#image').value = '';
+
+        updateCardPreview();
 
         document.querySelector('.form-card').classList.remove('hidden');
         document.querySelector('.btn').classList.remove('hidden');
@@ -358,6 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const defending = document.querySelector('#defending');
         const physical = document.querySelector('#physical');
         const photo = document.querySelector('#image');
+
     function eventListeners() {
         
 
@@ -439,120 +443,82 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(newPlayer);
         
         console.log(dataPlayer);
-        if (inputValidation) {
+        if (inputValidation()) {
             dataPlayer.push(newPlayer);
             localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
+            const card = createCard(newPlayer, dataPlayer.length);
+            document.querySelector('.player-cards').appendChild(card);
         }
-
-        const card = createCard(newPlayer, dataPlayer.length);
-
-        // const card = document.createElement('div');
-        // card.classList.add('fut-player-card');
-        // card.style = "height: 18rem; width: 11rem;";
-        // card.innerHTML = `
-        //     <div class="player-card-top">
-        //         <div class="player-master-info">
-        //             <div class="player-rating" style="height: 15px;">
-        //                 <span>${rating}</span>
-        //             </div>
-        //             <div class="player-position" style="height: 15px;">
-        //                 <span style="font-size: smaller;">${position}</span>
-        //             </div>
-        //             <div class="player-nation">
-        //                 <img src="${nationality}" alt="Nationality" draggable="false">
-        //             </div>
-        //             <div class="player-club">
-        //                 <img src="${club}" alt="Club" draggable="false">
-        //             </div>
-        //         </div>
-        //         <div class="player-picture" style="height: fit-content;">
-        //             <img src="${photo}" alt="${name}" draggable="false">
-        //         </div>
-        //     </div>
-        //     <div class="player-card-bottom">
-        //         <div class="player-info">
-        //             <div class="player-name">
-        //                 <span>${name}</span>
-        //             </div>
-        //             <div class="player-features">
-        //                 <div class="player-features-col">
-        //                     <span>
-        //                         <div class="player-feature-value">${pace}</div>
-        //                         <div class="player-feature-title">PAC</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${shooting}</div>
-        //                         <div class="player-feature-title">SHO</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${passing}</div>
-        //                         <div class="player-feature-title">PAS</div>
-        //                     </span>
-        //                 </div>
-        //                 <div class="player-features-col">
-        //                     <span>
-        //                         <div class="player-feature-value">${dribbling}</div>
-        //                         <div class="player-feature-title">DRI</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${defending}</div>
-        //                         <div class="player-feature-title">DEF</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${physical}</div>
-        //                         <div class="player-feature-title">PHY</div>
-        //                     </span>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // `;
-        document.querySelector('.player-cards').appendChild(card);
-
-        document.querySelector('.player-form').classList.add('hidden');
     });
 
     function inputValidation() {
-        let errors = [];
+        const fields = [
+            '#name', '#rating', '#nationality', '#position', '#club',
+            '#pace', '#logo', '#shooting', '#passing', '#dribbling', 
+            '#defending', '#physical', '#image'
+        ];
+        const numberFields = [
+            '#rating', '#pace', '#shooting', '#passing', '#dribbling', 
+            '#defending', '#physical'
+        ];
 
-        // Validation des champs
-        if (!name) errors.push("Le champ 'Nom' est obligatoire.");
-        if (!rating || isNaN(rating) || rating < 1 || rating > 100) {
-            errors.push("La note doit être un nombre entre 1 et 100.");
+        for (let field of numberFields) {
+            const value = document.querySelector(field).value;
+            if (value > 100 || value < 0) {
+                alert(`La valeur de ${field} doit être comprise entre 0 et 100.`);
+                return false;
+            }
         }
-        if (!nationality) errors.push("Le champ 'Nationalité' est obligatoire.");
-        if (!position) errors.push("Le champ 'Position' est obligatoire.");
-        if (!club) errors.push("Le champ 'Club' est obligatoire.");
-        if (!pace || isNaN(pace) || pace < 0 || pace > 100) {
-            errors.push("Le rythme doit être un nombre entre 0 et 100.");
+        
+        for (let field of fields) {
+            const value = document.querySelector(field).value.trim();
+            if (!value) {
+                alert(`Le champ ${field} ne peut pas être vide.`);
+                return false;
+            }
+            
         }
-        if (!shooting || isNaN(shooting) || shooting < 0 || shooting > 100) {
-            errors.push("Le tir doit être un nombre entre 0 et 100.");
-        }
-        if (!passing || isNaN(passing) || passing < 0 || passing > 100) {
-            errors.push("La passe doit être un nombre entre 0 et 100.");
-        }
-        if (!dribbling || isNaN(dribbling) || dribbling < 0 || dribbling > 100) {
-            errors.push("Le dribble doit être un nombre entre 0 et 100.");
-        }
-        if (!defending || isNaN(defending) || defending < 0 || defending > 100) {
-            errors.push("La défense doit être un nombre entre 0 et 100.");
-        }
-        if (!physical || isNaN(physical) || physical < 0 || physical > 100) {
-            errors.push("Le physique doit être un nombre entre 0 et 100.");
-        }
-
-        // Affichage des erreurs ou soumission
-        if (errors.length > 0) {
-            alert("Veuillez corriger les erreurs suivantes :\n" + errors.join("\n"));
+        if (document.querySelector('#name').value.length > 10) {
+            alert('Le nom du joueur ne peut pas dépasser 10 caractères.');
+            console.log('Le nom du joueur ne peut pas dépasser 10 caractères.');
+            
             return false;
-        } else {
-            alert("Tous les champs sont valides !");
-            // createCard();
-            return true;
         }
-    }
+        // emptyField();
+        return true;
 
+        
+    }
+    
+    function updateCardPreview() {
+        const name = document.querySelector('#name').value;
+        const rating = document.querySelector('#rating').value;
+        const nationality = document.querySelector('#nationality').value;
+        const position = document.querySelector('#position').value;
+        const club = document.querySelector('#club').value;
+        const photo = document.querySelector('#image').value;
+        const logo = document.querySelector('#logo').value;
+        const pace = document.querySelector('#pace').value;
+        const shooting = document.querySelector('#shooting').value;
+        const passing = document.querySelector('#passing').value;
+        const dribbling = document.querySelector('#dribbling').value;
+        const defending = document.querySelector('#defending').value;
+        const physical = document.querySelector('#physical').value;
+    
+        document.querySelector('.player-form .player-name span').textContent = name || 'Nom';
+        document.querySelector('.player-form .player-rating span').textContent = rating || '80';
+        document.querySelector('.player-form .player-position span').textContent = position || 'pos';
+        document.querySelector('.player-form .player-club img').src = logo || 'https://selimdoyranli.com/cdn/fut-player-card/img/barcelona.svg';
+        document.querySelector('.player-form .player-club img').alt = club || 'Barcelona';
+        document.querySelector('.player-form .player-picture img').src = photo || 'https://selimdoyranli.com/cdn/fut-player-card/img/messi.png';
+        document.querySelector('.player-form .player-features-col span:nth-child(1) .player-feature-value').textContent = pace || '0';
+        document.querySelector('.player-form .player-features-col span:nth-child(2) .player-feature-value').textContent = shooting || '0';
+        document.querySelector('.player-form .player-features-col span:nth-child(3) .player-feature-value').textContent = passing || '0';
+        document.querySelector('.player-form .scnd span:nth-child(1) .player-feature-value').textContent = dribbling || '0';
+        document.querySelector('.player-form .scnd span:nth-child(2) .player-feature-value').textContent = defending || '0';
+        document.querySelector('.player-form .scnd span:nth-child(3) .player-feature-value').textContent = physical || '0';
+        document.querySelector('.player-form .player-nation img').src = nationality || 'https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg';
+    }
     
 });
 
