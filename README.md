@@ -1,6 +1,6 @@
 # Ultimate XI
 
-**Ultimate XI** est une application web interactive permettant de gérer une équipe de football en ligne. Elle offre des fonctionnalités pour organiser des formations, ajouter des joueurs, modifier leurs informations et les réinitialiser. Ce projet vise à simplifier la gestion d'une équipe tout en offrant une expérience visuelle immersive.
+**Ultimate XI** est une application web interactive permettant de gérer une équipe de football en ligne. Elle offre des fonctionnalités pour organiser des formations, ajouter des joueurs, modifier leurs informations et les réinitialiser. Ce projet vise à simplifier la gestion d'une équipe tout en offrant une expérience visuelle immersive. Vous pouvez consulter la présentation complète du projet [ici](https://www.canva.com/design/DAGX3jw6EVw/TZYpDAh6W6bytHzPLYlFIQ/edit?utm_content=DAGX3jw6EVw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 ---
 
