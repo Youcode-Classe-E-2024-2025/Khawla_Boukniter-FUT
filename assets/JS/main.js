@@ -1,7 +1,7 @@
 import {data} from './data.js';
 
     let dataPlayer = JSON.parse(localStorage.getItem('dataPlayer')) || data.players;
-    localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
+    // localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
 
 window.onload = () => {
     updateFormation("3-5-2");
