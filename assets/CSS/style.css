@@ -863,10 +863,6 @@ video {
   gap: 1.5rem;
 }
 
-.gap-\[7\.5rem\] {
-  gap: 7.5rem;
-}
-
 .justify-self-center {
   justify-self: center;
 }
@@ -911,6 +907,11 @@ video {
   background-color: rgb(85 204 162 / var(--tw-bg-opacity, 1));
 }
 
+.bg-\[\#e9cc74\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 204 116 / var(--tw-bg-opacity, 1));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
@@ -919,16 +920,6 @@ video {
 .bg-zinc-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(39 39 42 / var(--tw-bg-opacity, 1));
-}
-
-.bg-red-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
-}
-
-.bg-\[\#e9cc74\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(233 204 116 / var(--tw-bg-opacity, 1));
 }
 
 .p-10 {
@@ -994,24 +985,14 @@ video {
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-red-500 {
-  --tw-text-opacity: 1;
-  color: rgb(239 68 68 / var(--tw-text-opacity, 1));
-}
-
-.text-red-950 {
-  --tw-text-opacity: 1;
-  color: rgb(69 10 10 / var(--tw-text-opacity, 1));
-}
-
 .text-red-900 {
   --tw-text-opacity: 1;
   color: rgb(127 29 29 / var(--tw-text-opacity, 1));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .blur {
@@ -1045,6 +1026,10 @@ body {
 
 nav span {
   font-size: 1.875rem;
+}
+
+.club-fields {
+  gap: 9.5rem;
 }
 
 @media (max-width: 1024px) {
@@ -1111,6 +1096,10 @@ nav span {
     top: 50%;
   }
 
+  .club-fields {
+    gap: 6.5rem;
+  }
+
   .slot {
     width: auto;
     top: 51%;
@@ -1124,6 +1113,7 @@ nav span {
 
   .players {
     width: 80%;
+    top: 13%;
   }
 
   .bench-con {
@@ -1192,9 +1182,17 @@ nav span {
   }
 
   .players {
-    top: 45%;
+    position: absolute;
+    top: 132%;
     padding: 1rem;
     width: 90%;
+  }
+
+  .slot {
+    width: auto;
+    top: 41%;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 
   .option {
@@ -1224,11 +1222,37 @@ nav span {
   .home  .add-icon svg {
     width: 18px;
   }
-}
 
-.hover\:bg-red-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(185 28 28 / var(--tw-bg-opacity, 1));
+  .player-form {
+    gap: 1.5rem;
+  }
+
+  .player-form .fut-player-card {
+    display: none;
+  }
+
+  .player-form form {
+    margin-bottom: 5rem;
+  }
+
+  .player-form form h3{
+    margin-top: 0;
+  }
+
+  .player-form > div {
+    align-self: end;
+    position: absolute;
+  }
+
+  .home .placeholder-img {
+    height: 8rem;
+  }
+
+  .btn-update {
+    position: absolute;
+    left: 106%;
+    width: 8rem;
+  }
 }
 
 .hover\:bg-\[\#e7c251\]:hover {

@@ -22,6 +22,10 @@ nav span {
   font-size: 1.875rem;
 }
 
+.club-fields {
+  gap: 9.5rem;
+}
+
 @media (max-width: 1024px) {
     .terrain {
       background-size: contain;
@@ -74,7 +78,9 @@ nav span {
     .add-icon {
       top: 50%;
     }
-
+    .club-fields {
+      gap: 6.5rem;
+    }
     .slot {
       width: auto;
       top: 51%;
@@ -85,6 +91,7 @@ nav span {
     }
     .players {
       width: 80%;
+      top: 13%;
     }
     .bench-con {
       height: fit-content;
@@ -138,10 +145,17 @@ nav span {
       grid-template-columns: 1fr 1fr 1fr;
     }
     .players {
-      top: 45%;
+      position: absolute;
+      top: 132%;
       padding: 1rem;
       width: 90%;
     }
+    .slot {
+      width: auto;
+      top: 41%;
+      height: -moz-fit-content;
+      height: fit-content;
+  }
     .option {
       font-size: xx-small;
     }
@@ -163,6 +177,28 @@ nav span {
     .home  .add-icon svg {
       width: 18px;
     }
-    
-    
+    .player-form {
+      gap: 1.5rem;
+    }
+    .player-form .fut-player-card {
+      display: none;
+    }
+    .player-form form {
+      margin-bottom: 5rem;
+    }
+    .player-form form h3{
+      margin-top: 0;
+    }
+    .player-form > div {
+      align-self: end;
+      position: absolute;
+    }
+    .home .placeholder-img {
+        height: 8rem;
+    }
+    .btn-update {
+      position: absolute;
+      left: 106%;
+      width: 8rem;
+    }
   }

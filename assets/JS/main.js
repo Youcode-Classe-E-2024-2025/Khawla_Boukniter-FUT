@@ -394,4 +394,3 @@ resetTeamButton.addEventListener('click', () => {
     
     alert("L'équipe a été réinitialisée avec succès !");
 });
-

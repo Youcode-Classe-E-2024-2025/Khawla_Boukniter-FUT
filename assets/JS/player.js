@@ -154,69 +154,9 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
 
         const card = document.querySelector(`.fut-player-card[data-index="${index}"]`);
-        // card.innerHTML = `
-        //     <div class="player-card-top">
-        //         <div class="player-master-info">
-        //             <div class="player-rating" style="height: 15px;">
-        //                 <span>${updatedPlayer.rating}</span>
-        //             </div>
-        //             <div class="player-position" style="height: 15px;">
-        //                 <span style="font-size: smaller;">${updatedPlayer.position}</span>
-        //             </div>
-        //             <div class="player-nation">
-        //                 <img src="${updatedPlayer.flag}" alt="Nationality" draggable="false">
-        //             </div>
-        //             <div class="player-club">
-        //                 <img src="${updatedPlayer.logo}" alt="${updatedPlayer.club}" draggable="false">
-        //             </div>
-        //         </div>
-        //         <div class="player-picture" style="height: fit-content;">
-        //             <img src="${updatedPlayer.photo}" alt="${updatedPlayer.name}" draggable="false">
-        //         </div>
-        //     </div>
-        //     <div class="player-card-bottom">
-        //         <div class="player-info">
-        //             <div class="player-name">
-        //                 <span>${updatedPlayer.name}</span>
-        //             </div>
-        //             <div class="player-features">
-        //                 <div class="player-features-col">
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.pace}</div>
-        //                         <div class="player-feature-title">PAC</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.shooting}</div>
-        //                         <div class="player-feature-title">SHO</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.passing}</div>
-        //                         <div class="player-feature-title">PAS</div>
-        //                     </span>
-        //                 </div>
-        //                 <div class="player-features-col">
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.dribbling}</div>
-        //                         <div class="player-feature-title">DRI</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.defending}</div>
-        //                         <div class="player-feature-title">DEF</div>
-        //                     </span>
-        //                     <span>
-        //                         <div class="player-feature-value">${updatedPlayer.physical}</div>
-        //                         <div class="player-feature-title">PHY</div>
-        //                     </span>
-        //                 </div>
-        //             </div>
-        //         </div>
-        //     </div>
-        // `;
         card.innerHTML = createCardContent(updatedPlayer)
         document.querySelector('.player-form').classList.add('hidden');
         document.querySelector('.cards').classList.remove('blur');
-
-
     }
 
     
@@ -283,17 +223,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     function deletePlayer(index) {
-        // const playerId = dataPlayer[index].id;
-        // const card = document.querySelector(`.fut-player-card[data-index="${index}"]`);
         
         if (confirm('Are you sure you want to delete this player?')) {
-            // if (card) {
-                // card.removeEventListener('click', () => updateForm(index))
-                // card.classList.add('fade-out');
-                // card.addEventListener('animationend', () => {
-                    // card.remove();
-                // });
-            
+
                 dataPlayer.splice(index, 1);
 
                 localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
@@ -301,47 +233,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 const container = document.querySelector('.player-cards');
                 container.innerHTML = `
                     <div class="bench-con flex flex-wrap gap-3">
-                <div class="slot relative text-center h-72 w-44">
-                    <button class="cardbutton button-reset" aria-label="Card Button">
-                        <img class="placeholder-img placeholder-enable-hover-shadow top-2" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
-                        <div class="add-icon absolute left-1/2 top-[50%] flex justify-center items-center" style="translate: -50% -50%" onclick="displayForm()">
-                            <span class="display-contents">
-                                <svg class="" viewBox="0 0 36 42" fill="none" width="36">
-                                    <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
-                                </svg>
-                            </span>
-                            <div class="absolute text-3xl">+</div>
+                        <div class="slot relative text-center h-72 w-44">
+                            <button class="cardbutton button-reset" aria-label="Card Button">
+                                <img class="placeholder-img placeholder-enable-hover-shadow top-2" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
+                                <div class="add-icon absolute left-1/2 top-[50%] flex justify-center items-center" style="translate: -50% -50%" onclick="displayForm()">
+                                    <span class="display-contents">
+                                        <svg class="" viewBox="0 0 36 42" fill="none" width="36">
+                                            <path d="M18.6275 41.711L18.3137 41.0298C18.1146 41.1215 17.8854 41.1215 17.6863 41.0298L17.3726 41.711L17.6863 41.0298L1.18627 33.4311C0.920355 33.3087 0.75 33.0427 0.75 32.7499V8.7248C0.75 8.42506 0.928458 8.15411 1.20383 8.03575L17.7038 0.943648C17.8929 0.862375 18.1071 0.862375 18.2962 0.943648L34.7962 8.03575C35.0715 8.15411 35.25 8.42506 35.25 8.7248V32.7499C35.25 33.0427 35.0796 33.3087 34.8137 33.4311L18.3137 41.0298L18.6275 41.711Z" stroke="currentColor" stroke-width="1.5"></path>
+                                        </svg>
+                                    </span>
+                                    <div class="absolute text-3xl">+</div>
+                                </div>
+                            </button>
                         </div>
-                    </button>
-                </div>
-            </div>
+                    </div>
                 `;
                 dataPlayer.forEach((player, newIndex) => {
                     const updatedCard = createCard(player, newIndex);
                     container.appendChild(updatedCard); 
                     updatedCard.addEventListener('click', () => updateForm(newIndex));
                 });
-                // displayCard();
-    
-                // updateCardsIndex();
+
                 document.querySelector('.player-form').classList.add('hidden');
-            document.querySelector('.cards').classList.remove('blur');
-            document.querySelector('.btn-delete').classList.add('hidden');
+                document.querySelector('.cards').classList.remove('blur');
+                document.querySelector('.btn-delete').classList.add('hidden');
             }
-            
-        // }
-
-        
     }
-
-    // function updateCardsIndex() {
-    //     const cards = document.querySelectorAll('.fut-player-card');
-    //     cards.forEach((card, index) => {
-    //         // card.dataset.index = index;
-    //         card.setAttribute('data-index', index);
-    //         console.log(card.dataset.index);
-    //     });
-    // }
 
     window.displayForm = function displayForm() {
         console.log('clicked');
@@ -494,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let field of numberFields) {
             const value = document.querySelector(field).value;
             if (value > 100 || value < 0) {
-                alert(`La valeur de ${field} doit être comprise entre 0 et 100.`);
+                alert(`Value of ${field} must be between 0 and 100.`);
                 return false;
             }
         }
@@ -502,7 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let field of fields) {
             const value = document.querySelector(field).value.trim();
             if (!value) {
-                alert(`Le champ ${field} ne peut pas être vide.`);
+                alert(`the field ${field} can't be empty.`);
                 return false;
             }
             
@@ -513,10 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
             
             return false;
         }
-        // emptyField();
-        return true;
-
-        
+        return true;        
     }
     
     function updateCardPreview() {
