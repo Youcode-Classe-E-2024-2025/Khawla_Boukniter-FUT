@@ -229,7 +229,7 @@ function displayChangements() {
                                             <button class="cardbutton button-reset" aria-label="Card Button">
                                                 <img class="placeholder-img placeholder-enable-hover-shadow" src="https://selimdoyranli.com/cdn/fut-player-card/img/card_bg.png">
                                                 <div class="slot absolute left-1/2 top-[40%]" style="translate: -50% -50%">
-                                                    <img src="${player.photo}" alt="${player.name}" style="width: 40">
+                                                    <img src="${player.photo}" alt="${player.name}" >
                                                     <div class="player-info">
                                                         <span style="font-size: smaller">${player.name}</span>
                                                     </div>
