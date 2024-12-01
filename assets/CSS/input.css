@@ -25,6 +25,9 @@ nav span {
 .club-fields {
   gap: 9.5rem;
 }
+nav ul {
+  gap: 5rem;
+}
 
 @media (max-width: 1024px) {
     .terrain {
@@ -106,6 +109,9 @@ nav span {
       position: absolute;
       gap: 2rem;
       width: 60%;
+    }
+    .search-container {
+      width: 17rem;
     }
   }
   
@@ -200,5 +206,11 @@ nav span {
       position: absolute;
       left: 106%;
       width: 8rem;
+    }
+    .search-container {
+      width: 12rem;
+    }
+    nav ul {
+      gap: 2rem;
     }
   }

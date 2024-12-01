@@ -462,6 +462,23 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.player-form .scnd span:nth-child(3) .player-feature-value').textContent = physical || '0';
         document.querySelector('.player-form .player-nation img').src = nationality || 'https://selimdoyranli.com/cdn/fut-player-card/img/argentina.svg';
     }
+
+    document.querySelector('.search-bar').addEventListener('input', filterPlayers);
+
+    function filterPlayers() {
+        const searchTerm = document.querySelector('.search-bar').value.toLowerCase();
+        const cards = document.querySelectorAll('.fut-player-card');
+
+        cards.forEach(card => {
+            const playerName = card.querySelector('.player-name span').textContent.toLowerCase();
+            if (playerName.includes(searchTerm)) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
     
 });
 
