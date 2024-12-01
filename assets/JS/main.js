@@ -151,7 +151,8 @@ function playersList() {
             console.log(playersEnTerrain);
             
             const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()) && !playersInChang.includes(player.id));
-
+            
+            document.querySelector('.players').classList.remove('absolute', 'top-[16%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
             document.querySelector('.players').classList.toggle('hidden');
             document.querySelector('.players').innerHTML = '';
             const container = document.createElement('div');
@@ -345,8 +346,8 @@ function addChangements() {
                     displayChangements();
                     this.remove()
                 });
-                
             });
+
 }
 
 const resetTeamButton = document.getElementById('reset-team');
@@ -366,7 +367,7 @@ resetTeamButton.addEventListener('click', () => {
                 img.style.opacity = "1"; // Réaugmenter l'opacité
             }, 500);
         }
-        
+
         parentSlot.innerHTML = `
                                 <div class="bench-con flex flex-wrap gap-3">
                                     <div class="slot relative text-center h-72 w-36">
