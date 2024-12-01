@@ -49,11 +49,11 @@ Le projet est construit avec :
 ### Étapes
 1. Clonez le projet :
     ```bash
-    git clone https://github.com/votre-utilisateur/XI-Formation-Manager.git
+    git clone https://github.com/votre-utilisateur/Khawla_Boukniter-FUT.git
     ```
 2. Accédez au répertoire :
     ```bash
-    cd XI-Formation-Manager
+    cd Khawla_Boukniter-FUT
     ```
 3. Lancez l'application :
     - Ouvrez `index.html` dans votre navigateur **ou**
