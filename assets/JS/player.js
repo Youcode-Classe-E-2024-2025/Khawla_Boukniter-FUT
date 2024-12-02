@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="player-card-bottom">
                         <div class="player-info">
                             <div class="player-name">
-                                <span>${player.name}</span>
+                                <span>${player.name.split(" ").at(-1)}</span>
                             </div>
                             <div class="player-features">
                                 <div class="player-features-col">
@@ -151,13 +151,15 @@ document.addEventListener("DOMContentLoaded", () => {
         };
         // eventListeners();
 
-        dataPlayer[index] = updatedPlayer;
-        localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
+        if (inputValidation()) {
+            dataPlayer[index] = updatedPlayer;
+            localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
 
-        const card = document.querySelector(`.fut-player-card[data-index="${index}"]`);
-        card.innerHTML = createCardContent(updatedPlayer)
-        document.querySelector('.player-form').classList.add('hidden');
-        document.querySelector('.cards').classList.remove('blur');
+            const card = document.querySelector(`.fut-player-card[data-index="${index}"]`);
+            card.innerHTML = createCardContent(updatedPlayer)
+            document.querySelector('.player-form').classList.add('hidden');
+            document.querySelector('.cards').classList.remove('blur');
+        }
     }
 
     
@@ -185,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="player-card-bottom">
                     <div class="player-info">
                         <div class="player-name">
-                            <span>${player.name}</span>
+                            <span>${player.name.split(" ").at(-1)}</span>
                         </div>
                         <div class="player-features">
                             <div class="player-features-col">
@@ -290,11 +292,11 @@ document.addEventListener("DOMContentLoaded", () => {
         eventListeners();
     };
 
-    document.querySelector(".btn").addEventListener('click', () => {
-        document.querySelector('.cards').classList.remove('blur');
-        document.querySelector('.player-form').classList.add('hidden');
-    });
-
+    // document.querySelector(".btn").addEventListener('click', () => {
+    //     document.querySelector('.cards').classList.remove('blur');
+    //     document.querySelector('.player-form').classList.add('hidden');
+    // });
+    const id = player.id;
     const name = document.querySelector('#name');
         const rating = document.querySelector('#rating');
         const nationality = document.querySelector('#nationality');
@@ -390,15 +392,20 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(newPlayer);
         
         console.log(dataPlayer);
+
         if (inputValidation()) {
             dataPlayer.push(newPlayer);
             localStorage.setItem('dataPlayer', JSON.stringify(dataPlayer));
             const card = createCard(newPlayer, dataPlayer.length);
             document.querySelector('.player-cards').appendChild(card);
+            document.querySelector('.cards').classList.remove('blur');
+            document.querySelector('.player-form').classList.add('hidden');
         }
     });
 
     function inputValidation() {
+        let isValid = true;
+
         const fields = [
             '#name', '#rating', '#nationality', '#position', '#club',
             '#pace', '#logo', '#shooting', '#passing', '#dribbling', 
@@ -413,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const value = document.querySelector(field).value;
             if (value > 100 || value < 0) {
                 alert(`Value of ${field} must be between 0 and 100.`);
-                return false;
+                isValid = false;
             }
         }
         
@@ -421,17 +428,20 @@ document.addEventListener("DOMContentLoaded", () => {
             const value = document.querySelector(field).value.trim();
             if (!value) {
                 alert(`the field ${field} can't be empty.`);
-                return false;
+                isValid = false;
             }
             
         }
-        if (document.querySelector('#name').value.length > 10) {
-            alert('Le nom du joueur ne peut pas dépasser 10 caractères.');
-            console.log('Le nom du joueur ne peut pas dépasser 10 caractères.');
-            
-            return false;
-        }
-        return true;        
+
+        dataPlayer.forEach(player => {
+            if (player.name.toLowerCase() === document.querySelector('#name').value.toLowerCase()) {
+                alert('This player already exists.');
+                isValid = false;
+                return;
+            }
+        })
+        
+        return isValid;        
     }
     
     function updateCardPreview() {

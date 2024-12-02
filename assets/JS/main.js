@@ -144,7 +144,10 @@ function playersList() {
              const btn = this;
             console.log("btn");
             selectedPlaceholder = btn;
-
+            // remove active-placeholder class from all placeholders
+            addBtn.forEach(btn => btn.classList.remove('active-placeholder'));
+            // add active-placeholder class to the clicked placeholder
+            btn.classList.add('active-placeholder');
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
             const playersInChang = changements.map(player => player.id);
@@ -189,7 +192,10 @@ function playersList() {
             container.appendChild(playerCard);
             document.querySelector('.players').appendChild(container);
             });
-    
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth' 
+            });
 }
 
 addBtn.forEach(btn => {

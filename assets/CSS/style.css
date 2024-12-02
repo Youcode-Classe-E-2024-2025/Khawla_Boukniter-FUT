@@ -851,10 +851,6 @@ video {
   gap: 0.5rem;
 }
 
-.gap-20 {
-  gap: 5rem;
-}
-
 .gap-3 {
   gap: 0.75rem;
 }
@@ -1059,6 +1055,13 @@ nav span {
 
 nav ul {
   gap: 5rem;
+}
+
+.active-placeholder {
+  scale: 1.1;
+  filter: drop-shadow(0 0 0.75rem #ffffff);
+  position: relative;
+  z-index: 999;
 }
 
 @media (max-width: 1024px) {
@@ -1300,3 +1303,5 @@ nav ul {
   --tw-bg-opacity: 1;
   background-color: rgb(231 194 81 / var(--tw-bg-opacity, 1));
 }
+
+
