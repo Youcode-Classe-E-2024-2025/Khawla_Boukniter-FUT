@@ -16,8 +16,8 @@
         <nav class="flex p-5 items-center">
             <span class="text-white font-[Righteous]">Ultimate<span class="text-[#e9cc74]">XI</span></span>
             <ul class="list-none flex mx-auto">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="player.html">Players</a></li>
+                <li class="hover:scale-110"><a href="../index.html" class="hover:text-yellow-400 transition-colors">Home</a></li>
+                <li class="hover:scale-110"><a href="player.html" class="hover:text-yellow-400 transition-colors">Players</a></li>
             </ul>
             <div class="search-container text-center mr-4">
                 <input type="text" class="search-bar text-black border-2 p-2 border-[#e9cc74] rounded-3xl w-full" placeholder="Rechercher un joueur...">
@@ -55,9 +55,22 @@
                     <label for="image">Image</label>
                     <input type="url" id="image" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player image url">
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center gap-[7.25rem]">
                     <label for="position">Position</label>
-                    <input type="text" id="position" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player position">
+                    <!-- <input type="text" id="position" class="input bg-[#404040] px-4 py-2 rounded" placeholder="Player position"> -->
+                    <select name="" id="position" class="text-black w-60">
+                        <option value="st">ST</option>
+                        <option value="lw">LW</option>
+                        <option value="rw">RW</option>
+                        <option value="cmc">CDM</option>
+                        <option value="cmr">CMR</option>
+                        <option value="cml">CML</option>
+                        <option value="lb">LB</option>
+                        <option value="rb">RB</option>
+                        <option value="cbl">CBL</option>
+                        <option value="cbr">CBR</option>
+                        <option value="gk">GK</option>
+                    </select>
                 </div>
                 <div class="flex items-center justify-between">
                     <label for="position">Nationality</label>

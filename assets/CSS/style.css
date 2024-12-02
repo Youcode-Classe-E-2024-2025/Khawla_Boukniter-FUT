@@ -795,6 +795,10 @@ video {
   width: 100%;
 }
 
+.w-60 {
+  width: 15rem;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -873,6 +877,14 @@ video {
 
 .gap-6 {
   gap: 1.5rem;
+}
+
+.gap-9 {
+  gap: 2.25rem;
+}
+
+.gap-\[7\.25rem\] {
+  gap: 7.25rem;
 }
 
 .justify-self-center {

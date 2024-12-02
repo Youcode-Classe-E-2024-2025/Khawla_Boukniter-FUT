@@ -401,8 +401,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('.player-cards').appendChild(card);
             document.querySelector('.cards').classList.remove('blur');
             document.querySelector('.player-form').classList.add('hidden');
+            location.reload();
         }
-        location.reload();
+        
     });
     console.log(newPlayer);
 
