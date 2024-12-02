@@ -31,8 +31,6 @@ nav ul {
 .active-placeholder {
   scale: 1.1;
   filter: drop-shadow(0 0 0.75rem #ffffff);
-  position: relative;
-  z-index: 999;
 }
 
 @media (max-width: 1024px) {
@@ -133,6 +131,7 @@ nav ul {
     }
     main {
       padding: 2rem;
+      margin-bottom: 40rem;
     }
     main > div:first-of-type {
       display: block;
@@ -218,6 +217,9 @@ nav ul {
     }
     nav ul {
       gap: 2rem;
+    }
+    #footer {
+      position: fixed; bottom: 0; width: 100%;
     }
   }
 

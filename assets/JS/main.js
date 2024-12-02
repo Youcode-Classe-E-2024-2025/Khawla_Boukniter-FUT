@@ -141,7 +141,7 @@ let selectedPlaceholder;
 let selectedPlayers = [];
 
 function playersList() {
-             const btn = this;
+            const btn = this;
             console.log("btn");
             selectedPlaceholder = btn;
             // remove active-placeholder class from all placeholders
@@ -160,7 +160,7 @@ function playersList() {
             
             
             document.querySelector('.players').classList.remove('absolute', 'top-[16%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
-            document.querySelector('.players').classList.toggle('hidden');
+            document.querySelector('.players').classList.remove('hidden');
             document.querySelector('.players').innerHTML = '';
             const container = document.createElement('div');
             container.classList.add('players-list', 'flex', 'flex-wrap', 'justify-center');
@@ -196,6 +196,7 @@ function playersList() {
                 top: document.body.scrollHeight,
                 behavior: 'smooth' 
             });
+            // document.querySelector('.players').classList.add('hidden');
 }
 
 addBtn.forEach(btn => {
@@ -206,6 +207,8 @@ window.selectPlayer = function selectPlayer(id) {
     console.log(selectedPlaceholder);
     
     const player = data.players.find(player => player.id == id);
+    console.log(player);
+    
     selectedPlaceholder.innerHTML = `
         <div class="selectedPlayer bench-con flex flex-wrap gap-3" data-id="${id}">
             <div class="slot relative text-center h-72 w-36">

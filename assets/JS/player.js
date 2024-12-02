@@ -160,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('.player-form').classList.add('hidden');
             document.querySelector('.cards').classList.remove('blur');
         }
+        
     }
 
     
@@ -296,7 +297,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //     document.querySelector('.cards').classList.remove('blur');
     //     document.querySelector('.player-form').classList.add('hidden');
     // });
-    const id = player.id;
     const name = document.querySelector('#name');
         const rating = document.querySelector('#rating');
         const nationality = document.querySelector('#nationality');
@@ -310,6 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const defending = document.querySelector('#defending');
         const physical = document.querySelector('#physical');
         const photo = document.querySelector('#image');
+        // const id = player.id;
 
     function eventListeners() {
         
@@ -367,10 +368,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         // createCard();
     }
-
+    let newPlayer;
     document.querySelector('.btn').addEventListener('click', (e) => {
         e.preventDefault();
-
+        
         const playerId = Date.now();
         const name = document.querySelector('#name').value;
         const rating = document.querySelector('#rating').value;
@@ -385,8 +386,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const physical = document.querySelector('#physical').value;
         const photo = document.querySelector('#image').value;
         const logo = document.querySelector('#logo').value;
-
-        const newPlayer = {
+        
+        newPlayer = {
             id: playerId, name: name, rating: rating, flag: nationality, position: position, club: club, logo: logo, photo: photo, pace: pace, shooting: shooting, passing: passing, dribbling: dribbling, defending: defending, physical: physical
         };
         console.log(newPlayer);
@@ -401,7 +402,9 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('.cards').classList.remove('blur');
             document.querySelector('.player-form').classList.add('hidden');
         }
+        location.reload();
     });
+    console.log(newPlayer);
 
     function inputValidation() {
         let isValid = true;
