@@ -26,6 +26,81 @@ document.addEventListener("DOMContentLoaded", () => {
         
     }
 
+    // document.addEventListener('DOMContentLoaded', () => {
+        const positionSelect = document.getElementById('position');
+        const statsContainer = document.querySelector('.stats');
+        const statFields = [
+            { id: 'pace', label: 'Pace' },
+            { id: 'shooting', label: 'Shooting' },
+            { id: 'passing', label: 'Passing' },
+            { id: 'dribbling', label: 'Dribbling' },
+            { id: 'defending', label: 'Defending' },
+            { id: 'physical', label: 'Physical' },
+        ];
+    
+        const goalkeeperStats = [
+            { id: 'diving', label: 'Diving' },
+            { id: 'handling', label: 'Handling' },
+            { id: 'kicking', label: 'Kicking' },
+            { id: 'reflexes', label: 'Reflexes' },
+            { id: 'speed', label: 'Speed' },
+            { id: 'positioning', label: 'Positioning' },
+        ];
+        positionSelect.addEventListener('change', () => {
+            const selectedPosition = positionSelect.value;
+            const statsToShow = selectedPosition === 'gk' ? goalkeeperStats : statFields;
+            statsContainer.innerHTML = '';
+            statsToShow.forEach(stat => {
+                const statRow = document.createElement('div');
+                statRow.className = 'flex items-center justify-between';
+                statRow.innerHTML = `
+                    <label for="${stat.id}">${stat.label}</label>
+                    <input type="number" id="${stat.id}" class="input bg-[#404040] px-4 py-2 rounded" placeholder="${stat.label}">
+                `;
+                statsContainer.appendChild(statRow);
+            });
+            if (selectedPosition === 'gk') {
+                document.querySelector(".form-card .player-card-bottom").innerHTML = `
+                    <div class="player-info">
+                        <div class="player-name">
+                            <span>name</span>
+                        </div>
+                        <div class="player-features">
+                            <div class="player-features-col">
+                                <span>
+                                    <div class="player-feature-value">div</div>
+                                    <div class="player-feature-title">DIV</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">han</div>
+                                    <div class="player-feature-title">HAN</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">kick</div>
+                                    <div class="player-feature-title">KICK</div>
+                                </span>
+                            </div>
+                            <div class="player-features-col scnd">
+                                <span>
+                                    <div class="player-feature-value">ref</div>
+                                    <div class="player-feature-title">REF</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">spd</div>
+                                    <div class="player-feature-title">SPD</div>
+                                </span>
+                                <span>
+                                    <div class="player-feature-value">pos</div>
+                                    <div class="player-feature-title">POS</div>
+                                </span>
+                            </div>
+                      </div>
+                    </div>
+            `};
+        
+            eventListeners();
+        });
+
     function createCard(player, index) {
         const card = document.createElement('div');
                 card.classList.add('fut-player-card', 'cursor-pointer');
