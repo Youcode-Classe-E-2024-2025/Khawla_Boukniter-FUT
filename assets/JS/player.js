@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updatePlayer(index) {
         const updatedPlayer = {
+            id: dataPlayer[index].id,
             name: document.querySelector('#name').value,
             rating: document.querySelector('#rating').value,
             flag: document.querySelector('#nationality').value,

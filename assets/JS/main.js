@@ -151,6 +151,10 @@ function playersList() {
             console.log(playersEnTerrain);
             
             const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()) && !playersInChang.includes(player.id));
+            console.log(filteredDataPlayer);
+            console.log(dataPlayer);
+            
+            
             
             document.querySelector('.players').classList.remove('absolute', 'top-[16%]', 'w-[64%]', 'p-[2.2rem]', 'rounded', 'bg-[#1e1e1ecc]');
             document.querySelector('.players').classList.toggle('hidden');
@@ -314,7 +318,6 @@ function addChangements() {
             
             selectedPlayers = [...document.querySelectorAll('.selectedPlayer')];
             const playersEnTerrain = selectedPlayers.map(player => player.getAttribute('data-id'));
-            console.log(playersEnTerrain);
 
             const filteredDataPlayer = dataPlayer.filter(player => !playersEnTerrain.includes(player.id.toString()));
             filteredDataPlayer.forEach(player => {
